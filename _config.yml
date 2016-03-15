@@ -1,8 +1,8 @@
 # Site settings
 title: Scott Wagner
-description: 'Placeholder site description'
+description: 'A blog from a guy in Philly who writes software for a living'
 url: 'http://johnscottwagner.com'
-baseurl: ''
+baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
