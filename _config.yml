@@ -3,7 +3,7 @@ title: Scott Wagner
 description: 'A blog from a guy in Philly who writes software for a living'
 url: 'http://johnscottwagner.com'
 baseurl: '/'
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: 'UA-75175707-1'
 # disqus_shortname: 'your-disqus-name'
 
 author:
