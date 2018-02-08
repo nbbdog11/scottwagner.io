@@ -5,6 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +23,12 @@
     "gatsby": "^1.9.175",
     "gatsby-plugin-typography": "^1.7.13",
     "typography-theme-moraga": "^0.15.10"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
   }
 }
