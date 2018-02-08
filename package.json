@@ -19,6 +19,8 @@
   },
   "homepage": "https://johnscottwagner.com",
   "dependencies": {
-    "gatsby": "^1.9.175"
+    "gatsby": "^1.9.175",
+    "gatsby-plugin-typography": "^1.7.13",
+    "typography-theme-moraga": "^0.15.10"
   }
 }
