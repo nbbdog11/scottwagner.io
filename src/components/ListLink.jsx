@@ -12,7 +12,7 @@ const ListLink = props => (
 
 ListLink.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default ListLink;
