@@ -41,7 +41,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             },
           });
         });
-        console.log(JSON.stringify(result, null, 4));
         resolve();
       });
   });
