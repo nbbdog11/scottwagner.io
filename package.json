@@ -27,6 +27,7 @@
     "typography-theme-moraga": "^0.15.10"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
