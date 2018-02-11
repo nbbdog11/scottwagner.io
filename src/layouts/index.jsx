@@ -32,9 +32,13 @@ class Layout extends React.Component {
     const divStyle = {
       margin: '0 auto',
       maxWidth: '100%',
-      height: this.state.height,
+      minHeight: this.state.height,
+      height: '100%',
       padding: '1.25rem 1rem',
       backgroundImage: `url(${background})`,
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
     };
 
