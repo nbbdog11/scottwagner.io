@@ -11,11 +11,12 @@ class Layout extends React.Component {
   }
 
   state = {
-    height: window.innerHeight,
+    height: 0,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('resize', this.setWindowSizeState);
+    this.setWindowSizeState();
   }
 
   componentWillUnmount() {
