@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
 const ListLink = ({ to, children }) => (
-  <li style={{ display: 'inline-block', marginRight: '1rem' }}>
-    <Link to={to}>
+  <div style={{ paddingBottom: '1rem' }}>
+    <Link to={to} style={{ margin: 'auto' }}>
       {children}
     </Link>
-  </li>
+  </div>
 );
 
 ListLink.propTypes = {
