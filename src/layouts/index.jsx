@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import HeaderLinksList from '../components/HeaderLinksList';
+import Header from '../components/Header';
 import ContentContainer from '../components/ContentContainer';
 import '../styles/main.css';
 
@@ -14,14 +13,7 @@ const divStyle = {
 
 const Layout = ({ children }) => (
   <div style={divStyle}>
-    <div style={{ marginBottom: '1.5rem' }}>
-      <h3 style={{ display: 'inline' }}>
-        <Link to="/" style={{ textShadow: 'none' }}>
-          Scott Wagner
-        </Link>
-      </h3>
-      <HeaderLinksList />
-    </div>
+    <Header />
     <ContentContainer>
       {children}
     </ContentContainer>
