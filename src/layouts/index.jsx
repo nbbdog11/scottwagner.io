@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import HeaderLinksList from '../components/HeaderLinksList';
 import ContentContainer from '../components/ContentContainer';
+import '../styles/main.css';
 
 const divStyle = {
   margin: '0 auto',
@@ -13,12 +14,14 @@ const divStyle = {
 
 const Layout = ({ children }) => (
   <div style={divStyle}>
-    <header style={{ marginBottom: '1.5rem' }}>
-      <Link to="/" style={{ textShadow: 'none' }}>
-        <h3 style={{ display: 'inline' }}>Scott Wagner</h3>
-      </Link>
+    <div style={{ marginBottom: '1.5rem' }}>
+      <h3 style={{ display: 'inline' }}>
+        <Link to="/" style={{ textShadow: 'none' }}>
+          Scott Wagner
+        </Link>
+      </h3>
       <HeaderLinksList />
-    </header>
+    </div>
     <ContentContainer>
       {children}
     </ContentContainer>
