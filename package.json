@@ -22,10 +22,8 @@
   "homepage": "https://johnscottwagner.com",
   "dependencies": {
     "gatsby": "^1.9.175",
-    "gatsby-plugin-typography": "^1.7.13",
     "gatsby-source-filesystem": "^1.5.18",
-    "gatsby-transformer-remark": "^1.7.31",
-    "typography-theme-moraga": "^0.15.10"
+    "gatsby-transformer-remark": "^1.7.31"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
