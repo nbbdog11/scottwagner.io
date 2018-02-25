@@ -5,7 +5,7 @@ const ContentContainer = ({ children }) => {
   const contentStyle = {
     backgroundColor: 'white',
     width: '70%',
-    margin: '0 auto',
+    margin: '5px auto',
     paddingLeft: '5px',
     paddingRight: '5px',
     borderRadius: '1px',

@@ -4,15 +4,8 @@ import Header from '../components/Header';
 import ContentContainer from '../components/ContentContainer';
 import '../styles/main.css';
 
-const divStyle = {
-  margin: '0 auto',
-  maxWidth: '100%',
-  height: '100%',
-  padding: '1.25rem 1rem',
-};
-
 const Layout = ({ children }) => (
-  <div style={divStyle}>
+  <div>
     <Header />
     <ContentContainer>
       {children}
