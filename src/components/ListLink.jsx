@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
-const ListLink = props => (
+const ListLink = ({ to, children }) => (
   <li style={{ display: 'inline-block', marginRight: '1rem' }}>
-    <Link to={props.to}>
-      <span style={{ color: 'white' }}>
-        {props.children}
-      </span>
+    <Link to={to}>
+      {children}
     </Link>
   </li>
 );

@@ -9,6 +9,7 @@ const ContentContainer = ({ children }) => {
     paddingLeft: '5px',
     paddingRight: '5px',
     borderRadius: '3px',
+    boxShadow: '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)',
   };
 
   return (
