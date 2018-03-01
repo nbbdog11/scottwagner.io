@@ -1,6 +1,7 @@
 import React from 'react';
 import SocialLinkIcon from './SocialLinkIcon';
 import twitter from '../../../images/social-icons/twitter.png';
+import instagram from '../../../images/social-icons/instagram.png';
 import github from '../../../images/social-icons/github.png';
 import linkedin from '../../../images/social-icons/linkedin.png';
 
@@ -9,6 +10,11 @@ const socialSites = [
     name: 'Twitter',
     link: 'https://twitter.com/nbbdog11',
     iconSrc: twitter,
+  },
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/nbbdog11/',
+    iconSrc: instagram,
   },
   {
     name: 'GitHub',
@@ -24,7 +30,8 @@ const socialSites = [
 
 const linksContainerStyle = {
   display: 'grid',
-  gridTemplateColumns: 'auto auto auto',
+  gridTemplateColumns: 'auto auto auto auto',
+  gridColumnGap: '12px',
   justifyItems: 'center',
 };
 
