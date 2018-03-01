@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Blog of Scott Wagner",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run lint && npm run clean && gatsby build",
+    "clean": "rm -rf public/",
     "deploy": "npm run build && ./deploy.sh",
     "develop": "gatsby develop",
     "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
