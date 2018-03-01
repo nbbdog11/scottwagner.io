@@ -1,5 +1,4 @@
 import React from 'react';
-import Flip from 'react-reveal/Flip';
 
 const jobs = [
   'Software Developer',
@@ -41,11 +40,9 @@ class JobsScroller extends React.Component {
     };
 
     return (
-      <Flip bottom cascade spy={this.state.index}>
-        <h3 style={style}>
-          {jobs[this.state.index]}
-        </h3>
-      </Flip>
+      <h3 style={style}>
+        {jobs[this.state.index]}
+      </h3>
     );
   }
 }
