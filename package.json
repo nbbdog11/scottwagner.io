@@ -23,7 +23,8 @@
   "dependencies": {
     "gatsby": "^1.9.175",
     "gatsby-source-filesystem": "^1.5.18",
-    "gatsby-transformer-remark": "^1.7.31"
+    "gatsby-transformer-remark": "^1.7.31",
+    "react-reveal": "^1.1.10"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
