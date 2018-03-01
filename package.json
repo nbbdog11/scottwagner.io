@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/nbbdog11/johnscottwagner.com/issues"
   },
-  "homepage": "https://johnscottwagner.com",
+  "homepage": "http://johnscottwagner.com",
   "dependencies": {
     "gatsby": "^1.9.175"
   },
