@@ -1,6 +1,7 @@
 import React from 'react';
 import Headshot from './Headshot';
 import JobsScroller from './JobsScroller';
+import SocialLinks from './SocialLinks';
 
 const overlayStyle = {
   position: 'absolute',
@@ -27,6 +28,7 @@ const SplashPageOverlay = () => (
       <Headshot />
       <h1 style={headingStyle}>Scott Wagner</h1>
       <JobsScroller />
+      <SocialLinks />
     </div>
   </div>
 );
