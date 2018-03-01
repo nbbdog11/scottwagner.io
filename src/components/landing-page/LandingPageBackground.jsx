@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import background from '../../../images/background.jpg';
 
-const SplashPageBackground = ({ height }) => {
+const LandingPageBackground = ({ height }) => {
   const style = {
     margin: '0 auto',
     maxWidth: '100%',
@@ -18,8 +18,8 @@ const SplashPageBackground = ({ height }) => {
   return <div style={style} />;
 };
 
-SplashPageBackground.propTypes = {
+LandingPageBackground.propTypes = {
   height: PropTypes.number.isRequired,
 };
 
-export default SplashPageBackground;
+export default LandingPageBackground;

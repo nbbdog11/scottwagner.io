@@ -22,7 +22,7 @@ const headingStyle = {
   textAlign: 'center',
 };
 
-const SplashPageOverlay = () => (
+const LandingPageOverlay = () => (
   <div style={overlayStyle}>
     <div style={overlayContentStyle}>
       <Headshot />
@@ -33,4 +33,4 @@ const SplashPageOverlay = () => (
   </div>
 );
 
-export default SplashPageOverlay;
+export default LandingPageOverlay;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SplashPage from '../components/splash-page/SplashPage';
+import LandingPage from '../components/landing-page/LandingPage';
 import '../styles/main.css';
 
-export default () => <SplashPage />;
+export default () => <LandingPage />;

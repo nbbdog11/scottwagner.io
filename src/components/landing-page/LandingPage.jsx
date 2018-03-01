@@ -1,8 +1,8 @@
 import React from 'react';
-import SplashPageBackground from './SplashPageBackground';
-import SplashPageOverlay from './SplashPageOverlay';
+import LandingPageBackground from './LandingPageBackground';
+import LandingPageOverlay from './LandingPageOverlay';
 
-class SplashPage extends React.Component {
+class LandingPage extends React.Component {
   state = {
     height: 0,
   }
@@ -25,11 +25,11 @@ class SplashPage extends React.Component {
   render() {
     return (
       <div style={{ position: 'relative' }}>
-        <SplashPageBackground height={this.state.height} />
-        <SplashPageOverlay />
+        <LandingPageBackground height={this.state.height} />
+        <LandingPageOverlay />
       </div>
     );
   }
 }
 
-export default SplashPage;
+export default LandingPage;
