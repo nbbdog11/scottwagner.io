@@ -1,6 +1,6 @@
 {
-  "name": "nbbdog11.github.io",
-  "version": "0.1.0",
+  "name": "johnscottwagner.com",
+  "version": "0.2.0",
   "description": "Blog of Scott Wagner",
   "scripts": {
     "build": "npm run lint && npm run clean && gatsby build",
@@ -13,18 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nbbdog11/nbbdog11.github.io.git"
+    "url": "git+https://github.com/nbbdog11/johnscottwagner.com.git"
   },
   "author": "Scott Wagner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nbbdog11/nbbdog11.github.io/issues"
+    "url": "https://github.com/nbbdog11/johnscottwagner.com/issues"
   },
-  "homepage": "https://johnscottwagner.com",
+  "homepage": "http://johnscottwagner.com",
   "dependencies": {
-    "gatsby": "^1.9.175",
-    "gatsby-source-filesystem": "^1.5.18",
-    "gatsby-transformer-remark": "^1.7.31"
+    "gatsby": "^1.9.175"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
