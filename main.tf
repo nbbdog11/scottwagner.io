@@ -20,3 +20,13 @@ resource "aws_s3_bucket" "site_bucket" {
     command = "aws s3 cp public/ s3://johnscottwagner.com --recursive"
   }
 }
+
+resource "aws_s3_bucket" "www_site_bucket" {
+  bucket = "www.johnscottwagner.com"
+  acl    = "public-read"
+  policy = "${file("www-bucket-policy.json")}"
+
+  website {
+    redirect_all_requests_to = "${aws_s3_bucket.site_bucket.id}"
+  }
+}
