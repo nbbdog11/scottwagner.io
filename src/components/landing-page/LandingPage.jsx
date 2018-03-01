@@ -1,6 +1,6 @@
 import React from 'react';
-import LandingPageBackground from './LandingPageBackground';
 import LandingPageOverlay from './LandingPageOverlay';
+import background from '../../../images/background.jpg';
 
 class LandingPage extends React.Component {
   state = {
@@ -23,9 +23,20 @@ class LandingPage extends React.Component {
   }
 
   render() {
+    const style = {
+      margin: '0 auto',
+      maxWidth: '100%',
+      minHeight: this.state.height,
+      height: '100%',
+      backgroundImage: `url(${background})`,
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    };
+
     return (
-      <div style={{ position: 'relative' }}>
-        <LandingPageBackground height={this.state.height} />
+      <div style={style}>
         <LandingPageOverlay />
       </div>
     );
