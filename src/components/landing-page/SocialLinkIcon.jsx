@@ -1,14 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const socialLinkStyle = {
-  color: 'white',
-};
-
 const SocialLinkIcon = ({ site }) => (
   <a
     href={site.link}
-    style={socialLinkStyle}
   >
     <img
       src={site.iconSrc}
