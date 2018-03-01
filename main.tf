@@ -2,6 +2,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "jsw-log-bucket"
+  acl    = "log-delivery-write"
+}
+
 resource "aws_s3_bucket" "site_bucket" {
   bucket = "johnscottwagner.com"
   acl    = "public-read"
@@ -9,6 +14,11 @@ resource "aws_s3_bucket" "site_bucket" {
 
   website {
     index_document = "index.html"
+  }
+
+  logging {
+    target_bucket = "${aws_s3_bucket.log_bucket.id}"
+    target_prefix = "log/"
   }
 
   provisioner "local-exec" {
@@ -28,5 +38,10 @@ resource "aws_s3_bucket" "www_site_bucket" {
 
   website {
     redirect_all_requests_to = "${aws_s3_bucket.site_bucket.id}"
+  }
+
+  logging {
+    target_bucket = "${aws_s3_bucket.log_bucket.id}"
+    target_prefix = "log/"
   }
 }
