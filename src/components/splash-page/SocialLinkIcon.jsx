@@ -5,10 +5,6 @@ const socialLinkStyle = {
   color: 'white',
 };
 
-const iconStyle = {
-  height: '50px',
-};
-
 const SocialLinkIcon = ({ site }) => (
   <a
     href={site.link}
@@ -16,7 +12,6 @@ const SocialLinkIcon = ({ site }) => (
   >
     <img
       src={site.iconSrc}
-      style={iconStyle}
       alt={site.name}
     />
   </a>
