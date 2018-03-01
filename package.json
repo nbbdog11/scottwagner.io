@@ -1,0 +1,37 @@
+{
+  "name": "nbbdog11.github.io",
+  "version": "0.1.0",
+  "description": "Blog of Scott Wagner",
+  "scripts": {
+    "build": "npm run lint && npm run clean && gatsby build",
+    "clean": "rm -rf public/",
+    "deploy": "npm run build && ./deploy.sh",
+    "develop": "gatsby develop",
+    "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
+    "serve": "gatsby serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbbdog11/nbbdog11.github.io.git"
+  },
+  "author": "Scott Wagner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nbbdog11/nbbdog11.github.io/issues"
+  },
+  "homepage": "https://johnscottwagner.com",
+  "dependencies": {
+    "gatsby": "^1.9.175",
+    "gatsby-source-filesystem": "^1.5.18",
+    "gatsby-transformer-remark": "^1.7.31"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
+  }
+}
