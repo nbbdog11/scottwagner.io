@@ -2,6 +2,32 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "jsw-state-bucket"
+    key    = "state/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+data "terraform_remote_state" "network" {
+  backend = "s3"
+  config {
+    bucket = "jsw-state-bucket"
+    key    = "state/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+resource "aws_s3_bucket" "state_bucket" {
+  bucket = "jsw-state-bucket"
+  policy = "${file("state-bucket-policy.json")}"
+
+  versioning {
+    enabled = true
+  }
+}
+
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "jsw-log-bucket"
   acl    = "log-delivery-write"
