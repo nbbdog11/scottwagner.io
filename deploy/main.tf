@@ -7,6 +7,11 @@ resource "aws_s3_bucket" "log_bucket" {
   acl    = "log-delivery-write"
 }
 
+resource "aws_s3_bucket" "email_bucket" {
+  bucket = "jsw-email-bucket"
+  policy = "${file("email-bucket-policy.json")}"
+}
+
 resource "aws_s3_bucket" "site_bucket" {
   bucket = "johnscottwagner.com"
   acl    = "public-read"
