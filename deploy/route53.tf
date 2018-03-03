@@ -60,7 +60,7 @@ resource "aws_route53_record" "TXT" {
     name    = "_amazonses.johnscottwagner.com.."
     type    = "TXT"
     ttl     = "1800"
-    records = ["PBOcz+SCuEILPX0VOyLZVSuwOLXJb3666bAr8C8dQdI="]
+    records = ["${aws_ses_domain_identity.johnscottwagner.verification_token}"]
 }
 
 resource "aws_route53_record" "CNAME_1" {
