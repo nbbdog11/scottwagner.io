@@ -21,7 +21,25 @@ data "terraform_remote_state" "network" {
 
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "jsw-state-bucket"
-  policy = "${file("state-bucket-policy.json")}"
+  policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:ListBucket",
+        "Resource": "arn:aws:s3:::jsw-state-bucket"
+      },
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": ["s3:GetObject", "s3:PutObject"],
+        "Resource": "arn:aws:s3:::jsw-state-bucket/state"
+      }
+    ]
+  }
+  EOF
 
   versioning {
     enabled = true
@@ -35,13 +53,46 @@ resource "aws_s3_bucket" "log_bucket" {
 
 resource "aws_s3_bucket" "email_bucket" {
   bucket = "jsw-email-bucket"
-  policy = "${file("email-bucket-policy.json")}"
+  policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowSESPuts-1520045511322",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "ses.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::jsw-email-bucket/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:Referer": "860597055125"
+                }
+            }
+        }
+    ]
+  }
+  EOF
 }
 
 resource "aws_s3_bucket" "site_bucket" {
   bucket = "johnscottwagner.com"
   acl    = "public-read"
-  policy = "${file("bucket-policy.json")}"
+  policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::johnscottwagner.com/*"
+        }
+    ]
+  }
+  EOF
 
   website {
     index_document = "index.html"
@@ -65,7 +116,20 @@ resource "aws_s3_bucket" "site_bucket" {
 resource "aws_s3_bucket" "www_site_bucket" {
   bucket = "www.johnscottwagner.com"
   acl    = "public-read"
-  policy = "${file("www-bucket-policy.json")}"
+  policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::www.johnscottwagner.com/*"
+        }
+    ]
+  }
+  EOF
 
   website {
     redirect_all_requests_to = "${aws_s3_bucket.site_bucket.id}"
