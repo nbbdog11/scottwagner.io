@@ -32,6 +32,8 @@ module.exports = class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
+          <script src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+          <script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
           {css}
         </head>
         <body {...this.props.bodyAttributes}>
