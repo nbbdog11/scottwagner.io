@@ -1,30 +1,30 @@
 import React from 'react';
 import SocialLinkIcon from './SocialLinkIcon';
-import twitter from '../../../images/social-icons/twitter.png';
-import instagram from '../../../images/social-icons/instagram.png';
-import github from '../../../images/social-icons/github.png';
-import linkedin from '../../../images/social-icons/linkedin.png';
 
 const socialSites = [
   {
     name: 'Twitter',
     link: 'https://twitter.com/nbbdog11',
-    iconSrc: twitter,
+    iconClass: 'fab fa-twitter',
+    hoverColor: '#1da1f2',
   },
   {
     name: 'Instagram',
     link: 'https://www.instagram.com/nbbdog11/',
-    iconSrc: instagram,
+    iconClass: 'fab fa-instagram',
+    hoverColor: '#af1883',
   },
   {
     name: 'GitHub',
     link: 'https://github.com/nbbdog11',
-    iconSrc: github,
+    iconClass: 'fab fa-github-alt',
+    hoverColor: '#24292e',
   },
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/nbbdog11',
-    iconSrc: linkedin,
+    iconClass: 'fab fa-linkedin-in',
+    hoverColor: '#0077b5',
   },
 ];
 
