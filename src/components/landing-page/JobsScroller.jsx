@@ -35,12 +35,8 @@ class JobsScroller extends React.Component {
   };
 
   render() {
-    const style = {
-      textAlign: 'center',
-    };
-
     return (
-      <h3 style={style}>
+      <h3 className="text-centered">
         {jobs[this.state.index]}
       </h3>
     );
