@@ -3,6 +3,9 @@ node_modules/
 public/
 .cache/
 
+# building css files from scss files
+src/styles/*.css
+
 .terraform/
 *.tfstate
 *.tfstate.*
