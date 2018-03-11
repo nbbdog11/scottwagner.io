@@ -3,27 +3,11 @@ import Headshot from './Headshot';
 import JobsScroller from './JobsScroller';
 import SocialLinks from './SocialLinks';
 
-const overlayStyle = {
-  position: 'absolute',
-  color: 'white',
-  height: '100%',
-  width: '100%',
-  display: 'grid',
-};
-
-const overlayContentStyle = {
-  margin: 'auto',
-};
-
-const headingStyle = {
-  textAlign: 'center',
-};
-
 const LandingPageOverlay = () => (
-  <div style={overlayStyle}>
-    <div style={overlayContentStyle}>
+  <div className="landing-overlay">
+    <div className="landing-overlay-content">
       <Headshot />
-      <h1 style={headingStyle}>Scott Wagner</h1>
+      <h1 className="text-centered">Scott Wagner</h1>
       <JobsScroller />
       <SocialLinks />
     </div>

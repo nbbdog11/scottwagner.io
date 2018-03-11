@@ -3,13 +3,17 @@
   "version": "0.3.0",
   "description": "Blog of Scott Wagner",
   "scripts": {
-    "build": "npm run lint && npm run clean && gatsby build",
+    "build": "npm-run-all build-css lint clean gatsby-build",
+    "build-css": "node-sass-chokidar src/styles -o src/styles",
     "clean": "rm -rf public/",
     "deploy": "npm run build && ./deploy.sh",
-    "develop": "gatsby develop",
+    "develop": "npm-run-all -p watch-css gatsby-develop",
+    "gatsby-build": "gatsby build",
+    "gatsby-develop": "gatsby develop",
     "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
     "serve": "gatsby serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles -o src/styles --watch --recursive"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,8 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1"
+    "eslint-plugin-react": "^7.6.1",
+    "node-sass-chokidar": "^1.1.0",
+    "npm-run-all": "^4.1.2"
   }
 }

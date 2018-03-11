@@ -1,0 +1,26 @@
+.social-links-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 12px;
+    justify-items: center;
+}
+
+.social-link {
+    color: #ffffff;
+
+    &#twitter:hover {
+        color: #1da1f2;
+    }
+
+    &#instagram:hover {
+        color: #af1883;
+    }
+
+    &#github:hover {
+        color: #24292e;
+    }
+
+    &#linkedin:hover {
+        color: #0077b5;
+    }
+}
