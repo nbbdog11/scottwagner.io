@@ -36,9 +36,9 @@ class JobsScroller extends React.Component {
 
   render() {
     return (
-      <h3 className="text-centered">
+      <div className="jobs">
         {jobs[this.state.index]}
-      </h3>
+      </div>
     );
   }
 }
