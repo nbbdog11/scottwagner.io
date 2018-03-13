@@ -7,7 +7,7 @@ const LandingPageOverlay = () => (
   <div className="landing-overlay">
     <div className="landing-overlay-content">
       <Headshot />
-      <h1 className="text-centered">Scott Wagner</h1>
+      <div className="name">Scott Wagner</div>
       <JobsScroller />
       <SocialLinks />
     </div>

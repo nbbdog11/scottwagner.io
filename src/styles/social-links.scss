@@ -3,24 +3,30 @@
     grid-template-columns: auto auto auto auto;
     grid-column-gap: 12px;
     justify-items: center;
+    background-color: #f7f7f7;
+    padding: 15px;
 }
 
 .social-link {
-    color: #ffffff;
+    color: #8a8686;
 
-    &#twitter:hover {
-        color: #1da1f2;
+    &#twitter:hover,
+    &#twitter:focus {
+    color: #1da1f2;
     }
 
-    &#instagram:hover {
+    &#instagram:hover,
+    &#instagram:focus {
         color: #af1883;
     }
 
-    &#github:hover {
+    &#github:hover,
+    &#github:focus {
         color: #24292e;
     }
 
-    &#linkedin:hover {
+    &#linkedin:hover,
+    &#linkedin:focus {
         color: #0077b5;
     }
 }
