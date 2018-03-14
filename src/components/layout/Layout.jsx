@@ -6,12 +6,11 @@ import '../../styles/layout.css';
 const Layout = ({ children, title }) => (
   <div>
     <HeaderBar />
-    <div className="layout-background">
-      <div className="layout-main">
-        <h1 className="title">{title}</h1>
-        <div className="content">
-          {children}
-        </div>
+    <div className="layout-background" />
+    <div className="layout-main">
+      <h1 className="title">{title}</h1>
+      <div className="content">
+        {children}
       </div>
     </div>
   </div>
