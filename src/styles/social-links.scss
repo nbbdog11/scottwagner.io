@@ -1,9 +1,11 @@
+@import './_variables.scss';
+
 .social-links-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-column-gap: 12px;
     justify-items: center;
-    background-color: #f7f7f7;
+    background-color: $tertiary-color;
     padding: 15px;
 }
 
