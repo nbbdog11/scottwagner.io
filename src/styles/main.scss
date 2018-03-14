@@ -10,6 +10,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .name {
     text-align: center;
     font-weight: 700;
@@ -43,10 +47,29 @@ body {
 
 .landing-overlay-content {
     padding-top: 20px;
+    & .headshot {
+        margin: auto;
+        display: block;
+        border-radius: 100%;
+    }
 }
 
-.headshot {
-    margin: auto;
-    display: block;
-    border-radius: 100%;
+.header-bar {
+    & .headshot {
+        max-height: 100%;
+        border-radius: 100%;
+    }
+
+    height: 50px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.layout-main {
+    margin-top: 70px;
+    padding: 5px 50px 5px;
 }
