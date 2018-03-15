@@ -29,28 +29,51 @@ a {
     color: $secondary-color;
 }
 
+@media (min-width: 400px) {
+    .landing-page-container {
+        background-image: url('../../images/background.jpg');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+    }
+
+    .landing-overlay {
+        box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
+        border-top: 6px solid #7081B3;
+        max-width: 400px;
+        flex: 0 1 80%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 399px) {
+    .landing-overlay {
+        height: 100vh;
+    }
+}
+
+@media (max-height: 300px) {
+    .landing-overlay-content {
+        padding-top: 5px;
+    }
+}
+
+@media (min-height: 301px) {
+    .landing-overlay-content {
+        padding-top: 20px;
+    }
+}
+
 .landing-page-container {
     min-height: 100vh;
-    background-image: url('../../images/background.jpg');
-    background-position: center;
-    background-size: cover;
-    display: flex;
 }
 
 .landing-overlay {
-    flex: 0 1 80%;
-    margin: auto;
     background-color: #ffffff;
-    box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
-    border-top: 6px solid #7081B3;
-    max-width: 400px;
 }
 
-.landing-overlay-content {
-    padding-top: 20px;
-    & .headshot {
-        margin: auto;
-        display: block;
-        border-radius: 100%;
-    }
+.landing-overlay-content .headshot{
+    margin: auto;
+    display: block;
+    border-radius: 100%;
 }
