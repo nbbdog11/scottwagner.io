@@ -1,3 +1,7 @@
 $primary-color: #444444;
 $secondary-color: #7081B3;
 $tertiary-color: #f7f7f7;
+
+@function secondary-color-with-opacity($opacity) {
+  @return rgba(112,129,179, $opacity);
+}
