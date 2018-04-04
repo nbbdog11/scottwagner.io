@@ -1,32 +1,54 @@
-.social-links-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 12px;
-    justify-items: center;
-    background-color: #f7f7f7;
+@import "./_variables.scss";
+
+@media (max-width: 399px) {
+  .social-links-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-height: 300px) {
+  .social-links-container {
+    padding: 5px;
+  }
+}
+
+@media (min-height: 301px) {
+  .social-links-container {
     padding: 15px;
+  }
+}
+
+.social-links-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 12px;
+  justify-items: center;
+  background-color: $tertiary-color;
 }
 
 .social-link {
-    color: #8a8686;
+  color: #8a8686;
 
-    &#twitter:hover,
-    &#twitter:focus {
+  &#twitter:hover,
+  &#twitter:focus {
     color: #1da1f2;
-    }
+  }
 
-    &#instagram:hover,
-    &#instagram:focus {
-        color: #af1883;
-    }
+  &#instagram:hover,
+  &#instagram:focus {
+    color: #af1883;
+  }
 
-    &#github:hover,
-    &#github:focus {
-        color: #24292e;
-    }
+  &#github:hover,
+  &#github:focus {
+    color: #24292e;
+  }
 
-    &#linkedin:hover,
-    &#linkedin:focus {
-        color: #0077b5;
-    }
+  &#linkedin:hover,
+  &#linkedin:focus {
+    color: #0077b5;
+  }
 }
