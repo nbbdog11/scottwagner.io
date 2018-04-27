@@ -12,6 +12,7 @@ terraform {
 
 data "terraform_remote_state" "network" {
   backend = "s3"
+
   config {
     bucket = "jsw-state-bucket"
     key    = "state/terraform.tfstate"
@@ -21,6 +22,7 @@ data "terraform_remote_state" "network" {
 
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "jsw-state-bucket"
+
   policy = <<EOF
   {
     "Version": "2012-10-17",
@@ -51,34 +53,10 @@ resource "aws_s3_bucket" "log_bucket" {
   acl    = "log-delivery-write"
 }
 
-resource "aws_s3_bucket" "email_bucket" {
-  bucket = "jsw-email-bucket"
-  policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowSESPuts-1520045511322",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "ses.amazonaws.com"
-            },
-            "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::jsw-email-bucket/*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:Referer": "860597055125"
-                }
-            }
-        }
-    ]
-  }
-  EOF
-}
-
 resource "aws_s3_bucket" "site_bucket" {
   bucket = "johnscottwagner.com"
   acl    = "public-read"
+
   policy = <<EOF
   {
     "Version": "2012-10-17",
@@ -116,6 +94,7 @@ resource "aws_s3_bucket" "site_bucket" {
 resource "aws_s3_bucket" "www_site_bucket" {
   bucket = "www.johnscottwagner.com"
   acl    = "public-read"
+
   policy = <<EOF
   {
     "Version": "2012-10-17",
