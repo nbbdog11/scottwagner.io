@@ -86,6 +86,10 @@
     color: $primary-color;
   }
 
+  & .subtitle {
+    color: lighten($primary-color, 5%);
+  }
+
   & .content {
     color: $secondary-color;
     line-height: 1.6;
