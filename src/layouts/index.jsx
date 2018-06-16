@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SplashPage from '../components/splash-page/SplashPage';
+import LandingPage from '../components/landing-page/LandingPage';
 import Header from '../components/Header';
 import ContentContainer from '../components/ContentContainer';
 import '../styles/main.css';
 
 const Layout = ({ children, location }) => {
   if (location.pathname === '/') {
-    return <SplashPage />;
+    return <LandingPage />;
   }
   return (
     <div>
