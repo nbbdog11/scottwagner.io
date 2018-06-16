@@ -90,4 +90,9 @@
     color: $secondary-color;
     line-height: 1.6;
   }
+
+  a:hover {
+    text-decoration: underline;
+    color: darken($secondary-color, 10%);
+  }
 }
