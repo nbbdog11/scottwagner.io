@@ -5,8 +5,13 @@ import Layout from '../components/layout/Layout';
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;
+  const { title, date } = post.frontmatter;
+
   return (
-    <Layout title={post.frontmatter.title}>
+    <Layout
+      title={title}
+      subtitle={date}
+    >
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   );
@@ -24,6 +29,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
