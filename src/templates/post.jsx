@@ -1,14 +1,14 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Layout from '../components/layout/Layout';
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
+    <Layout title={post.frontmatter.title}>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+    </Layout>
   );
 };
 

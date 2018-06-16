@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PostPreview from '../components/PostPreview';
+import Layout from '../components/layout/Layout';
 
 const buildPostPreview = (node) => {
   const { frontmatter, excerpt } = node;
@@ -24,9 +25,9 @@ const Posts = ({ data }) => {
   const postPreviews = allMarkdownRemark.edges.map(({ node }) => buildPostPreview(node));
 
   return (
-    <div>
+    <Layout title="Posts">
       {postPreviews}
-    </div>
+    </Layout>
   );
 };
 
