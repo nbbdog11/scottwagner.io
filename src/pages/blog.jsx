@@ -20,25 +20,25 @@ const buildPostPreview = (node) => {
   );
 };
 
-const Posts = ({ data }) => {
+const Blog = ({ data }) => {
   const { allMarkdownRemark } = data;
   const postPreviews = allMarkdownRemark.edges.map(({ node }) => buildPostPreview(node));
 
   return (
-    <Layout title="Posts">
+    <Layout title="Blog">
       {postPreviews}
     </Layout>
   );
 };
 
-Posts.propTypes = {
+Blog.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Posts;
+export default Blog;
 
 export const query = graphql`
-    query Posts {
+    query Blog {
         allMarkdownRemark {
           edges {
             node {
