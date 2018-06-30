@@ -9,3 +9,5 @@ src/styles/*.css
 .terraform/
 *.tfstate
 *.tfstate.*
+
+yarn-error.log

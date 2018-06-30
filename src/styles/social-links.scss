@@ -23,7 +23,7 @@
 
 .social-links-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 12px;
   justify-items: center;
   background-color: $tertiary-color;
@@ -50,5 +50,10 @@
   &#linkedin:hover,
   &#linkedin:focus {
     color: #0077b5;
+  }
+
+  &#blog:hover,
+  &#blog:focus {
+    color: $secondary-color;
   }
 }

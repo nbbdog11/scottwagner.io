@@ -22,6 +22,11 @@ const socialSites = [
     link: 'https://www.linkedin.com/in/nbbdog11',
     iconClass: 'fab fa-linkedin-in',
   },
+  {
+    name: 'Blog',
+    link: 'https://johnscottwagner.com/blog',
+    iconClass: 'fas fa-book',
+  },
 ];
 
 const SocialLinks = () => (
