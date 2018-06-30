@@ -33,6 +33,16 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.headComponents}
           <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75175707-1"></script>
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-75175707-1');
+            `
+          }} />
           {css}
         </head>
         <body {...this.props.bodyAttributes}>
