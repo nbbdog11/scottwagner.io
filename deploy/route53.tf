@@ -56,14 +56,6 @@ resource "aws_route53_record" "SOA" {
   records = ["ns-132.awsdns-16.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"]
 }
 
-resource "aws_route53_record" "TXT" {
-  zone_id = "${aws_route53_zone.johnscottwagner.zone_id}"
-  name    = "_amazonses.johnscottwagner.com.."
-  type    = "TXT"
-  ttl     = "1800"
-  records = ["PBOcz+SCuEILPX0VOyLZVSuwOLXJb3666bAr8C8dQdI="]
-}
-
 resource "aws_route53_record" "CNAME_1" {
   zone_id = "${aws_route53_zone.johnscottwagner.zone_id}"
   name    = "ej7womf65yjp3wi7ouwlbyxfvmrbff5s._domainkey.johnscottwagner.com.."
