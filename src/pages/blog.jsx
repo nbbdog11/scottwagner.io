@@ -1,6 +1,7 @@
 /* eslint-disable no-undef,react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import PostPreview from '../components/PostPreview';
 import Layout from '../components/layout/Layout';
 
@@ -10,13 +11,18 @@ const buildPostPreview = (node) => {
   const { title, date } = frontmatter;
 
   return (
-    <PostPreview
-      key={title}
-      title={title}
-      date={date}
-      excerpt={excerpt}
-      slug={slug}
-    />
+    <div>
+      <Helmet>
+        <title>Scott Wagner | Blog</title>
+      </Helmet>
+      <PostPreview
+        key={title}
+        title={title}
+        date={date}
+        excerpt={excerpt}
+        slug={slug}
+      />
+    </div>
   );
 };
 

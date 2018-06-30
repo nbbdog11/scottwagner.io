@@ -26,7 +26,8 @@
   },
   "homepage": "http://johnscottwagner.com",
   "dependencies": {
-    "gatsby": "^1.9.271"
+    "gatsby": "^1.9.271",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
