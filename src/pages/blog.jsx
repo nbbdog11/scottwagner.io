@@ -1,7 +1,7 @@
 /* eslint-disable no-undef,react/forbid-prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 import PostPreview from '../components/PostPreview';
 import Layout from '../components/layout/Layout';
 
@@ -26,7 +26,7 @@ const buildPostPreview = (node) => {
   );
 };
 
-const Blog = ({ data }) => {
+const Blog = (data) => {
   const { allMarkdownRemark } = data;
   const postPreviews = allMarkdownRemark.edges.map(({ node }) => buildPostPreview(node));
 
@@ -37,27 +37,28 @@ const Blog = ({ data }) => {
   );
 };
 
-Blog.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export default Blog;
-
-export const query = graphql`
-    query Blog {
-        allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
-          edges {
-            node {
-              frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
+export default () => (
+  <StaticQuery
+    query={
+      graphql`
+        {
+          allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                }
+                fields {
+                  slug
+                }
+                excerpt
               }
-              fields {
-                slug
-              }
-              excerpt
             }
           }
         }
-      }
-`;
+      `
+    }
+    render={Blog}
+  />
+);
