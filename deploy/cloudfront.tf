@@ -19,11 +19,6 @@ resource "aws_cloudfront_distribution" "johnscottwagner" {
     is_ipv6_enabled     = true
     default_root_object = "index.html"
 
-    logging_config {
-        bucket          = "${aws_s3_bucket.log_bucket.bucket_domain_name}"
-        prefix          = "cdn/"
-    }
-
     aliases = ["johnscottwagner.com", "www.johnscottwagner.com"]
 
     default_cache_behavior {
