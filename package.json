@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm-run-all build-css lint clean gatsby-build",
     "build-css": "node-sass-chokidar src/styles -o src/styles",
-    "clean": "rm -rf public/",
+    "clean": "rm -rf .cache/ public/",
     "deploy": "npm run build && ./deploy.sh",
     "develop": "npm-run-all -p watch-css gatsby-develop",
     "gatsby-build": "gatsby build",
