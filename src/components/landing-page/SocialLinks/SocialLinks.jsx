@@ -1,5 +1,6 @@
 import React from 'react';
-import SocialLinkIcon from './SocialLinkIcon';
+import SocialLinkIcon from './SocialLinksIcon/SocialLinkIcon';
+import styles from './social-links.module.less';
 
 const socialSites = [
   {
@@ -30,7 +31,7 @@ const socialSites = [
 ];
 
 const SocialLinks = () => (
-  <div className="social-links-container">
+  <div className={styles.socialLinksContainer}>
     {socialSites.map(site => <SocialLinkIcon site={site} key={site.name} />)}
   </div>
 );

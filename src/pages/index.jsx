@@ -1,6 +1,5 @@
 import React from 'react';
-import LandingPage from '../components/landing-page/LandingPage';
-import '../styles/main.css';
-import '../styles/social-links.css';
+import LandingPage from '../components/landing-page/LandingPage/LandingPage';
+import '../styles/main.less';
 
 export default () => <LandingPage />;

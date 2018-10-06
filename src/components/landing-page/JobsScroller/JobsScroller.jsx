@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './jobs-scroller.module.less';
 
 const jobs = [
   'Software Developer',
@@ -27,17 +28,19 @@ class JobsScroller extends React.Component {
   }
 
   cycleJob = () => {
-    const currentlyOnLastElement = this.state.index === jobs.length - 1;
-    const newIndex = currentlyOnLastElement ? 0 : this.state.index + 1;
+    const { index } = this.state;
+    const currentlyOnLastElement = index === jobs.length - 1;
+    const newIndex = currentlyOnLastElement ? 0 : index + 1;
     this.setState({
       index: newIndex,
     });
   };
 
   render() {
+    const { index } = this.state;
     return (
-      <div className="jobs">
-        {jobs[this.state.index]}
+      <div className={styles.jobs}>
+        {jobs[index]}
       </div>
     );
   }

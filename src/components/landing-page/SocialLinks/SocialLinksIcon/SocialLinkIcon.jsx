@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './social-links-icon.module.less';
 
 const SocialLinkIcon = ({ site }) => (
   <a
-    className="social-link"
+    className={styles.socialLink}
     id={site.name.toLowerCase()}
     href={site.link}
   >

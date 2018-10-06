@@ -1,0 +1,23 @@
+@import "../../../styles/_variables.less";
+
+.socialLinksContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-column-gap: 12px;
+  justify-items: center;
+  background-color: @tertiary-color;
+  @media (max-width: 399px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @media (max-height: 300px) {
+    padding: 5px;
+  }
+
+  @media (min-height: 301px) {
+    padding: 15px;
+  }
+}

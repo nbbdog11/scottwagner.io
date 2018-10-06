@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import styles from './navigation.module.less';
 
 const NavigationOverlay = ({ onClose }) => (
-  <aside>
-    <div className="outer-close toggle-overlay">
+  <aside className={styles.navigationOverlay}>
+    <div className={styles.outerClose}>
       <a
-        className="close"
+        className={styles.close}
         role="button"
         tabIndex={0}
         onKeyPress={onClose}
