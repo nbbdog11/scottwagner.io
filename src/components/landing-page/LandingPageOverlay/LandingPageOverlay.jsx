@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Headshot from '../Headshot';
+import Headshot from '../Headshot/Headshot';
 import JobsScroller from '../JobsScroller/JobsScroller';
 import SocialLinks from '../SocialLinks/SocialLinks';
-import './landing-page-overlay.less';
+import styles from './landing-page-overlay.module.less';
 
 const LandingPageOverlay = () => (
-  <div className="landing-overlay">
-    <div className="landing-overlay-content">
+  <div className={styles.landingOverlay}>
+    <div className={styles.landingOverlayContent}>
       <Headshot />
       <Link to="about">
-        <div className="name">Scott Wagner</div>
+        <div className={styles.name}>Scott Wagner</div>
       </Link>
       <JobsScroller />
       <SocialLinks />

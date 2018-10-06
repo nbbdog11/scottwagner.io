@@ -1,6 +1,6 @@
 @import "../../../styles/_variables.less";
 
-.layout-background {
+.layoutBackground {
   background-color: @tertiary-color;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   z-index: -1;
 }
 
-.layout-main {
+.layoutMain {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -30,21 +30,22 @@
     min-height: 100vh;
   }
 
-  & .title {
-    color: @primary-color;
-  }
-
-  & .subtitle {
-    color: lighten(@primary-color, 3%);
-  }
-
-  & .content {
-    color: lighten(@primary-color, 5%);
-    line-height: 1.6;
-  }
 
   a:hover {
     text-decoration: underline;
     color: darken(@secondary-color, 10%);
   }
+}
+
+.title {
+  color: @primary-color;
+}
+
+.subtitle {
+  color: lighten(@primary-color, 3%);
+}
+
+.content {
+  color: lighten(@primary-color, 5%);
+  line-height: 1.6;
 }

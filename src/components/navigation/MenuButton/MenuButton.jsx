@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './menu-button.module.less';
 
 const MenuButton = ({ onOpen }) => (
   <button
-    className="menu-button"
+    className={styles.menuButton}
     onClick={onOpen}
   >
     MENU

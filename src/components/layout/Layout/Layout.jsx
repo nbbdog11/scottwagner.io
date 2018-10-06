@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HeaderBar from '../HeaderBar/HeaderBar';
-import './layout.less';
+import styles from './layout.module.less';
 
 const Layout = ({ children, title, subtitle }) => (
   <div>
     <HeaderBar />
-    <div className="layout-background" />
-    <div className="layout-main">
-      <h1 className="title">{title}</h1>
-      {subtitle && <h3 className="subtitle">{subtitle}</h3>}
-      <div className="content">
+    <div className={styles.layoutBackground} />
+    <div className={styles.layoutMain}>
+      <h1 className={styles.title}>{title}</h1>
+      {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
+      <div className={styles.content}>
         {children}
       </div>
     </div>

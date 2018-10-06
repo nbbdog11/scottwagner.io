@@ -1,5 +1,5 @@
 import React from 'react';
-import './jobs-scroller.less';
+import styles from './jobs-scroller.module.less';
 
 const jobs = [
   'Software Developer',
@@ -39,7 +39,7 @@ class JobsScroller extends React.Component {
   render() {
     const { index } = this.state;
     return (
-      <div className="jobs">
+      <div className={styles.jobs}>
         {jobs[index]}
       </div>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
-import './likes-grid.less';
+import styles from './likes-grid.module.less';
 
 const LikesGrid = () => (
   <div>
     <div>Things I Like:</div>
-    <div className="likes-grid">
+    <div className={styles.likesGrid}>
       <div>
-        <div className="likes-column-header">
+        <div className={styles.likesColumnHeader}>
           Software
         </div>
         <ul>
@@ -18,7 +18,7 @@ const LikesGrid = () => (
         </ul>
       </div>
       <div>
-        <div className="likes-column-header">
+        <div className={styles.likesColumnHeader}>
           Not-Software
         </div>
         <ul>

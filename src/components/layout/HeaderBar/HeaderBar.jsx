@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import MenuButton from '../../navigation/MenuButton';
+import MenuButton from '../../navigation/MenuButton/MenuButton';
 import NavigationOverlay from '../../navigation/NavigationOverlay/NavigationOverlay';
 import headshot from '../../../../images/headshot.jpg';
-import './header-bar.less';
+import styles from './header-bar.module.less';
 
 class HeaderBar extends React.Component {
   state = {
@@ -25,9 +25,9 @@ class HeaderBar extends React.Component {
   render() {
     const { navOpen } = this.state;
     return (
-      <div className="header-bar">
+      <div className={styles.headerBar}>
         <Link to="/">
-          <img src={headshot} className="headshot" alt="headshot" />
+          <img src={headshot} className={styles.headshot} alt="headshot" />
         </Link>
         <MenuButton onOpen={this.handleOpen} />
         { navOpen && <NavigationOverlay onClose={this.handleClose} /> }
