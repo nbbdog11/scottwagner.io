@@ -6,6 +6,7 @@ const MenuButton = ({ onOpen }) => (
   <button
     className={styles.menuButton}
     onClick={onOpen}
+    type="button"
   >
     MENU
   </button>
