@@ -18,7 +18,10 @@ const Layout = ({ children, title, subtitle }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
 };
