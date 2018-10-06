@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import MenuButton from '../navigation/MenuButton';
-import NavigationOverlay from '../navigation/NavigationOverlay';
-import headshot from '../../../images/headshot.jpg';
-import '../../styles/navigation.less';
+import MenuButton from '../../navigation/MenuButton';
+import NavigationOverlay from '../../navigation/NavigationOverlay/NavigationOverlay';
+import headshot from '../../../../images/headshot.jpg';
+import './header-bar.less';
 
 class HeaderBar extends React.Component {
   state = {

@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLinkIcon from './SocialLinkIcon';
+import './social-links.less';
 
 const socialSites = [
   {

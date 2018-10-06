@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeaderBar from './HeaderBar';
-import '../../styles/layout.less';
+import HeaderBar from '../HeaderBar/HeaderBar';
+import './layout.less';
 
 const Layout = ({ children, title, subtitle }) => (
   <div>

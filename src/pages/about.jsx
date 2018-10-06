@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Layout from '../components/layout/Layout';
-import LikesTable from '../components/about/LikesGrid';
+import Layout from '../components/layout/Layout/Layout';
+import LikesTable from '../components/about/LikesGrid/LikesGrid';
 
 export default () => (
   <div>

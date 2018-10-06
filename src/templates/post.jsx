@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/Layout/Layout';
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;

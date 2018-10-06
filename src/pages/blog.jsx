@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import PostPreview from '../components/PostPreview';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/Layout/Layout';
 
 const buildPostPreview = (node) => {
   const { frontmatter, excerpt } = node;
