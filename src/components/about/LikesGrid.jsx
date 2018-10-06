@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/likes-grid.css';
+import '../../styles/likes-grid.less';
 
 const LikesGrid = () => (
   <div>

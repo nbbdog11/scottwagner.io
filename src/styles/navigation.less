@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import "./_variables.less";
 
 aside {
   position: fixed;
@@ -16,12 +16,12 @@ aside {
   position: fixed;
   top: 40px;
   right: 60px;
-  color: $secondary-color;
+  color: @secondary-color;
   z-index: 3;
   cursor: pointer;
-  color: secondary-color-with-opacity(0.5);
+  .secondary-color-with-opacity(0.5);
   &:hover {
-    color: $secondary-color;
+    color: @secondary-color;
   }
 }
 
@@ -47,10 +47,10 @@ nav {
         transition: all 0.5s ease;
         display: block;
         text-decoration: none;
-        color: secondary-color-with-opacity(0.6);
+        .secondary-color-with-opacity(0.6);
 
         &:hover {
-          color: $secondary-color;
+          color: @secondary-color;
           transform: scale(1.1);
 
           &:before {
@@ -66,7 +66,7 @@ nav {
           height: 2px;
           bottom: 0;
           left: 25%;
-          background: $secondary-color;
+          background: @secondary-color;
           visibility: hidden;
           transform: scaleX(0);
           transition: all 0.3s ease-in-out 0s;

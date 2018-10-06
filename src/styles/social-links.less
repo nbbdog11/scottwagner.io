@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import "./_variables.less";
 
 @media (max-width: 399px) {
   .social-links-container {
@@ -26,7 +26,7 @@
   grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 12px;
   justify-items: center;
-  background-color: $tertiary-color;
+  background-color: @tertiary-color;
 }
 
 .social-link {
@@ -54,6 +54,6 @@
 
   &#blog:hover,
   &#blog:focus {
-    color: $secondary-color;
+    color: @secondary-color;
   }
 }

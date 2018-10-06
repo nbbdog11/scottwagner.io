@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import MenuButton from '../navigation/MenuButton';
 import NavigationOverlay from '../navigation/NavigationOverlay';
 import headshot from '../../../images/headshot.jpg';
-import '../../styles/navigation.css';
+import '../../styles/navigation.less';
 
 class HeaderBar extends React.Component {
   state = {
@@ -23,13 +23,14 @@ class HeaderBar extends React.Component {
   }
 
   render() {
+    const { navOpen } = this.state;
     return (
       <div className="header-bar">
         <Link to="/">
           <img src={headshot} className="headshot" alt="headshot" />
         </Link>
         <MenuButton onOpen={this.handleOpen} />
-        { this.state.navOpen && <NavigationOverlay onClose={this.handleClose} /> }
+        { navOpen && <NavigationOverlay onClose={this.handleClose} /> }
       </div>
     );
   }
