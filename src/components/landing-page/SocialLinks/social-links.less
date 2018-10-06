@@ -1,32 +1,25 @@
 @import "../../../styles/_variables.less";
 
-@media (max-width: 399px) {
-  .social-links-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-@media (max-height: 300px) {
-  .social-links-container {
-    padding: 5px;
-  }
-}
-
-@media (min-height: 301px) {
-  .social-links-container {
-    padding: 15px;
-  }
-}
-
 .social-links-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 12px;
   justify-items: center;
   background-color: @tertiary-color;
+  @media (max-width: 399px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @media (max-height: 300px) {
+    padding: 5px;
+  }
+
+  @media (min-height: 301px) {
+    padding: 15px;
+  }
 }
 
 .social-link {

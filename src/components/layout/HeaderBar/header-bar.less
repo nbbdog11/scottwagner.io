@@ -1,6 +1,23 @@
 @import '../../../styles/_variables.less';
 
 .header-bar {
+  border-bottom: 6px solid @secondary-color;
+  height: 50px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  @media (max-width: 799px) {
+    padding: 10px 20px 10px;
+  }
+
+  @media (min-width: 800px) {
+    padding: 10px 50px 10px;
+  }
+
   & .headshot {
     max-height: 100%;
     border-radius: 100%;
@@ -21,33 +38,12 @@
     position: fixed;
     height: 30px;
     margin-top: 10px;
-  }
 
-  border-bottom: 6px solid @secondary-color;
-  height: 50px;
-  background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
-
-@media (max-width: 799px) {
-  .header-bar {
-    padding: 10px 20px 10px;
-
-    & .menu-button {
+    @media (max-width: 799px) {
       right: 20px;
     }
-  }
-}
 
-@media (min-width: 800px) {
-  .header-bar {
-    padding: 10px 50px 10px;
-
-    & .menu-button {
+    @media (min-width: 800px) {
       right: 50px;
     }
   }

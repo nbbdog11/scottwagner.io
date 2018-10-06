@@ -7,47 +7,39 @@
   color: @primary-color;
 }
 
-@media (min-width: 400px) {
-  .landing-page-container {
-    background-image: url("../../../../images/background.jpg");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-  }
-
-  .landing-overlay {
-    box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
-    border-top: 6px solid #7081b3;
-    max-width: 400px;
-    flex: 0 1 80%;
-    margin: auto;
-  }
-}
-
-@media (max-width: 399px) {
-  .landing-overlay {
-    height: 100vh;
-  }
-}
-
-@media (max-height: 300px) {
-  .landing-overlay-content {
+.landing-overlay-content {
+  @media (max-height: 300px) {
     padding-top: 5px;
   }
-}
 
-@media (min-height: 301px) {
-  .landing-overlay-content {
+  @media (min-height: 301px) {
     padding-top: 20px;
   }
 }
 
 .landing-page-container {
   min-height: 100vh;
+  @media (min-width: 400px) {
+    background-image: url("../../../../images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+  }
 }
 
 .landing-overlay {
   background-color: #ffffff;
+  @media (min-width: 400px) {
+    box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #7081b3;
+    max-width: 400px;
+    flex: 0 1 80%;
+    margin: auto;
+  }
+
+  @media (max-width: 399px) {
+    height: 100vh;
+  }
 }
 
 .landing-overlay-content .headshot {
