@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import 'typeface-nunito-sans';
 import Layout from '../components/layout/Layout/Layout';
 import LikesTable from '../components/about/LikesGrid/LikesGrid';
 
