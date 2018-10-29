@@ -29,7 +29,8 @@
     "less": "^3.8.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "typeface-nunito-sans": "^0.0.54"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
