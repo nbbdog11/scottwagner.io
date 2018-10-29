@@ -25,7 +25,7 @@ const socialSites = [
   },
   {
     name: 'Blog',
-    link: 'https://johnscottwagner.com/blog',
+    link: '/blog',
     iconClass: 'fas fa-book',
   },
 ];
