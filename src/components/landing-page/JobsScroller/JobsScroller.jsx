@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './jobs-scroller.module.less';
 
 const jobs = [
@@ -7,43 +7,29 @@ const jobs = [
   'Drummer',
   'Modern Agile Believer',
   'Villanova Alum',
-  'Philly Suburbanite',
+  'Philly Resident',
   'Former Long Islander',
   'Learner',
   'Occassional Gym-Goer',
   'Board Gamer',
 ];
 
-class JobsScroller extends React.Component {
-  state = {
-    index: 0,
-  }
+const JobsScroller = () => {
+  const [index, setIndex] = useState(0);
 
-  componentWillMount() {
-    this.interval = setInterval(this.cycleJob, 3000);
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentlyOnLastElement = index === jobs.length - 1;
+      const newIndex = currentlyOnLastElement ? 0 : index + 1;
+      setIndex(newIndex);
+    }, 3000);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [index]);
 
-  cycleJob = () => {
-    const { index } = this.state;
-    const currentlyOnLastElement = index === jobs.length - 1;
-    const newIndex = currentlyOnLastElement ? 0 : index + 1;
-    this.setState({
-      index: newIndex,
-    });
-  };
-
-  render() {
-    const { index } = this.state;
-    return (
-      <div className={styles.jobs}>
-        {jobs[index]}
-      </div>
-    );
-  }
-}
+  return <div className={styles.jobs}>{jobs[index]}</div>;
+};
 
 export default JobsScroller;
