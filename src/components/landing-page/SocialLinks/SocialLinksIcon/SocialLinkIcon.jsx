@@ -5,13 +5,10 @@ import styles from './social-links-icon.module.less';
 const SocialLinkIcon = ({ site }) => (
   <a
     className={styles.socialLink}
-    id={site.name.toLowerCase()}
+    id={styles[site.name.toLowerCase()]}
     href={site.link}
   >
-    <i
-      className={`${site.iconClass} fa-2x`}
-      alt={site.name}
-    />
+    <i className={`${site.iconClass} fa-2x`} alt={site.name} />
   </a>
 );
 
