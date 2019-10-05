@@ -13,7 +13,7 @@ terraform {
 data "terraform_remote_state" "network" {
   backend = "s3"
 
-  config {
+  config = {
     bucket = "jsw-state-bucket"
     key    = "state/terraform.tfstate"
     region = "us-east-1"
@@ -23,49 +23,38 @@ data "terraform_remote_state" "network" {
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "jsw-state-bucket"
 
-  policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": "*",
-        "Action": "s3:ListBucket",
-        "Resource": "arn:aws:s3:::jsw-state-bucket"
-      },
-      {
-        "Effect": "Allow",
-        "Principal": "*",
-        "Action": ["s3:GetObject", "s3:PutObject"],
-        "Resource": "arn:aws:s3:::jsw-state-bucket/state"
-      }
-    ]
-  }
-  EOF
-
   versioning {
     enabled = true
   }
 }
 
-resource "aws_s3_bucket" "site_bucket" {
-  bucket = "johnscottwagner.com"
-  acl    = "public-read"
+resource "aws_s3_bucket_policy" "state_bucket_policy" {
+  bucket = "${aws_s3_bucket.state_bucket.id}"
 
-  policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadForGetBucketObjects",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::johnscottwagner.com/*"
-        }
-    ]
-  }
-  EOF
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::jsw-state-bucket"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::jsw-state-bucket/state"
+    }
+  ]
+}
+  POLICY
+}
+
+resource "aws_s3_bucket" "site_bucket" {
+  bucket = "scottwagner.io"
+  acl    = "public-read"
 
   website {
     index_document = "index.html"
@@ -75,32 +64,51 @@ resource "aws_s3_bucket" "site_bucket" {
     when    = "destroy"
     command = "aws s3 rm s3://johnscottwagner.com --recursive"
   }
+}
 
-  provisioner "local-exec" {
-    command = "aws s3 cp public/ s3://johnscottwagner.com --recursive"
-  }
+resource "aws_s3_bucket_policy" "site_bucket_policy" {
+  bucket = "${aws_s3_bucket.site_bucket.id}"
+
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "PublicReadForGetBucketObjects",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::scottwagner.io/*"
+      }
+  ]
+}
+  POLICY
 }
 
 resource "aws_s3_bucket" "www_site_bucket" {
-  bucket = "www.johnscottwagner.com"
+  bucket = "www.scottwagner.io"
   acl    = "public-read"
-
-  policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadForGetBucketObjects",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::www.johnscottwagner.com/*"
-        }
-    ]
-  }
-  EOF
 
   website {
     redirect_all_requests_to = "${aws_s3_bucket.site_bucket.id}"
   }
+}
+
+resource "aws_s3_bucket_policy" "www_site_bucket_policy" {
+  bucket = "${aws_s3_bucket.www_site_bucket.id}"
+
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "PublicReadForGetBucketObjects",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::www.scottwagner.io/*"
+      }
+  ]
+}
+  POLICY
 }
