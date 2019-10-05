@@ -8,8 +8,8 @@ resource "aws_route53_record" "A" {
   type    = "A"
 
   alias {
-    name                   = "${aws_cloudfront_distribution.johnscottwagner.domain_name}"
-    zone_id                = "${aws_cloudfront_distribution.johnscottwagner.hosted_zone_id}"
+    name                   = "${aws_cloudfront_distribution.scottwagnerio.domain_name}"
+    zone_id                = "${aws_cloudfront_distribution.scottwagnerio.hosted_zone_id}"
     evaluate_target_health = false
   }
 }
@@ -20,8 +20,8 @@ resource "aws_route53_record" "WWW_A" {
   type    = "A"
 
   alias {
-    name                   = "${aws_cloudfront_distribution.johnscottwagner.domain_name}"
-    zone_id                = "${aws_cloudfront_distribution.johnscottwagner.hosted_zone_id}"
+    name                   = "${aws_cloudfront_distribution.scottwagnerio.domain_name}"
+    zone_id                = "${aws_cloudfront_distribution.scottwagnerio.hosted_zone_id}"
     evaluate_target_health = false
   }
 }
