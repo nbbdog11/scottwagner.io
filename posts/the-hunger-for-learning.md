@@ -1,6 +1,6 @@
 ---
-title: 'The Hunger for Learning: Based on a True Story'
-date: '2018-06-30'
+title: "The Hunger for Learning: Based on a True Story"
+date: "2018-06-30"
 ---
 
 This story starts with a web developer who had a desire to learn new skills, and practice and reinforce old ones.
@@ -21,4 +21,4 @@ He still wasn't satisfied. The developer had recently been to a [meetup](https:/
 
 The developer looked back on this project, and was relatively pleased with the results. He now had a fully functional portfolio site/blog, and a new set of skills acquired in the process. Starting with knowledge of React and a touch of CSS, he learned Gatsby, more in-depth CSS, AWS, and Terraform. Knowing that no work is ever truly complete, he continues to look for areas of improvement to this day.
 
-My name is Scott Wagner, and I am that developer. The site you are on ([johnscottwagner.com](https://johnscottwagner.com)) is the site built in this story. I wanted to share my experience building this site and learning a bunch of neat stuff along the way, so I started writing, and it came out as a third person story. I'll be adding more content in the coming weeks/months on a variety of software-related topics. Stay tuned sports fans.
+My name is Scott Wagner, and I am that developer. The site you are on ([scottwagner.io](https://scottwagner.io)) is the site built in this story. I wanted to share my experience building this site and learning a bunch of neat stuff along the way, so I started writing, and it came out as a third person story. I'll be adding more content in the coming weeks/months on a variety of software-related topics. Stay tuned sports fans.
