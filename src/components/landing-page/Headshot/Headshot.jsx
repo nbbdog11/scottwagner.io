@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import headshot from '../../../../images/headshot.jpg';
-import styles from './headshot.module.less';
+
+const StyledHeadshot = styled.img`
+  margin: auto;
+  display: block;
+  border-radius: 100%;
+`;
 
 const Headshot = () => (
   <Link to="about">
-    <img src={headshot} className={styles.headshot} alt="headshot" />
+    <StyledHeadshot src={headshot} alt="headshot" />
   </Link>
 );
 

@@ -1,11 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
+import backgroundImage from '../../../../images/background.jpg';
 import LandingPageOverlay from '../LandingPageOverlay/LandingPageOverlay';
-import styles from './landing-page.module.less';
+
+const StyledLandingPage = styled.div`
+  min-height: 100vh;
+  @media (min-width: 400px) {
+    background-image: url(${backgroundImage});
+    background-position: center;
+    background-size: cover;
+    display: flex;
+  }
+`;
 
 const LandingPage = () => (
-  <div className={styles.landingPageContainer}>
+  <StyledLandingPage>
     <LandingPageOverlay />
-  </div>
+  </StyledLandingPage>
 );
 
 export default LandingPage;

@@ -1,11 +1,14 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
 import Blog from '../components/blog/Blog';
-import '../styles/main.less';
+import theme, { GlobalStyling } from './theme';
 
 export default () => (
-  <StaticQuery
-    query={graphql`
+  <ThemeProvider theme={theme}>
+    <GlobalStyling />
+    <StaticQuery
+      query={graphql`
       {
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
@@ -23,6 +26,7 @@ export default () => (
         }
       }
     `}
-    render={Blog}
-  />
+      render={Blog}
+    />
+  </ThemeProvider>
 );

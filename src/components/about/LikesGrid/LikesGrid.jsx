@@ -1,14 +1,35 @@
 import React from 'react';
-import styles from './likes-grid.module.less';
+import styled from 'styled-components';
+
+const StyledLikesGrid = styled.div`
+  display: grid;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  @media (max-width: 799px) {
+    grid-template-columns: 100%;
+  }
+
+  & .likesColumnHeader {
+
+  }
+`;
+
+const LikesColumnHeader = styled.header`
+  text-align: center;
+  font-weight: 700;
+`;
 
 const LikesGrid = () => (
-  <div>
+  <>
     <div>Things I Like:</div>
-    <div className={styles.likesGrid}>
+    <StyledLikesGrid>
       <div>
-        <div className={styles.likesColumnHeader}>
+        <LikesColumnHeader>
           Software
-        </div>
+        </LikesColumnHeader>
         <ul>
           <li>React</li>
           <li>Javascript</li>
@@ -18,9 +39,9 @@ const LikesGrid = () => (
         </ul>
       </div>
       <div>
-        <div className={styles.likesColumnHeader}>
+        <LikesColumnHeader>
           Not-Software
-        </div>
+        </LikesColumnHeader>
         <ul>
           <li>Coffee</li>
           <li>Vinyl</li>
@@ -29,8 +50,8 @@ const LikesGrid = () => (
           <li>Espresso</li>
         </ul>
       </div>
-    </div>
-  </div>
+    </StyledLikesGrid>
+  </>
 );
 
 export default LikesGrid;

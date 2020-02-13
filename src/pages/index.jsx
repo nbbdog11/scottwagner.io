@@ -1,5 +1,11 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import LandingPage from '../components/landing-page/LandingPage/LandingPage';
-import '../styles/main.less';
+import theme, { GlobalStyling } from './theme';
 
-export default () => <LandingPage />;
+export default () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyling />
+    <LandingPage />
+  </ThemeProvider>
+);

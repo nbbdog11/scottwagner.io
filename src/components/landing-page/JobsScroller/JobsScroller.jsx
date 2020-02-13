@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './jobs-scroller.module.less';
+import styled from 'styled-components';
 
 const jobs = [
   'Software Developer',
@@ -13,6 +13,13 @@ const jobs = [
   'Occassional Gym-Goer',
   'Board Gamer',
 ];
+
+const Jobs = styled.div`
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: ${(props) => props.theme.colors.secondary};
+`;
 
 const JobsScroller = () => {
   const [index, setIndex] = useState(0);
@@ -29,7 +36,7 @@ const JobsScroller = () => {
     };
   }, [index]);
 
-  return <div className={styles.jobs}>{jobs[index]}</div>;
+  return <Jobs>{jobs[index]}</Jobs>;
 };
 
 export default JobsScroller;

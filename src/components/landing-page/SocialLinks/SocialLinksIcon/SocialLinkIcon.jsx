@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './social-links-icon.module.less';
+import styled from 'styled-components';
+
+const StyledSocialLinkIcon = styled.a`
+  color: #8a8686;
+  &:hover,
+  &:focus {
+    color: ${(props) => props.activeColor}
+  }
+`;
 
 const SocialLinkIcon = ({ site }) => (
-  <a
-    className={styles.socialLink}
-    id={styles[site.name.toLowerCase()]}
+  <StyledSocialLinkIcon
+    activeColor={site.activeColor}
     href={site.link}
   >
     <i className={`${site.iconClass} fa-2x`} alt={site.name} />
-  </a>
+  </StyledSocialLinkIcon>
 );
 
 SocialLinkIcon.propTypes = {
@@ -17,6 +24,7 @@ SocialLinkIcon.propTypes = {
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     iconClass: PropTypes.string.isRequired,
+    activeColor: PropTypes.string.isRequired,
   }).isRequired,
 };
 
