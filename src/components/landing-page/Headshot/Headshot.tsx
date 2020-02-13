@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import headshot from '../../../../images/headshot.jpg';
+import headshot from 'images/headshot.jpg';
 
 const StyledHeadshot = styled.img`
   margin: auto;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledMenuButton = styled.button`
@@ -27,7 +26,11 @@ const StyledMenuButton = styled.button`
   }
 `;
 
-const MenuButton = ({ onOpen }) => (
+type MenuButtonProps = {
+  onOpen: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
+const MenuButton: React.FC<MenuButtonProps> = ({ onOpen }) => (
   <StyledMenuButton
     onClick={onOpen}
     type="button"
@@ -35,9 +38,5 @@ const MenuButton = ({ onOpen }) => (
     MENU
   </StyledMenuButton>
 );
-
-MenuButton.propTypes = {
-  onOpen: PropTypes.func.isRequired,
-};
 
 export default MenuButton;

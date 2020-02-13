@@ -1,8 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import Layout from '../components/layout/Layout/Layout';
-import LikesTable from '../components/about/LikesGrid/LikesGrid';
+import Layout from 'components/layout/Layout';
+import LikesTable from 'components/about/LikesGrid';
 import theme, { GlobalStyling } from './theme';
 
 export default () => (

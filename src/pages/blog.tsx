@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import Blog from '../components/blog/Blog';
+import Blog from 'components/blog/Blog';
 import theme, { GlobalStyling } from './theme';
 
 export default () => (

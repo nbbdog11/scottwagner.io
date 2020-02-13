@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { rgba } from 'polished';
@@ -95,7 +94,11 @@ const Close = styled.a`
   }
 `;
 
-const NavigationOverlay = ({ onClose }) => (
+type NavigationOverlayProps = {
+  onClose: () => void
+}
+
+const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ onClose }) => (
   <StyledNavigationOverlay>
     <OuterClose>
       <Close role="button" tabIndex={0} onKeyPress={onClose} onClick={onClose}>
@@ -117,9 +120,5 @@ const NavigationOverlay = ({ onClose }) => (
     </nav>
   </StyledNavigationOverlay>
 );
-
-NavigationOverlay.propTypes = {
-  onClose: PropTypes.func.isRequired,
-};
 
 export default NavigationOverlay;

@@ -1,13 +1,22 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import Layout from '../components/layout/Layout/Layout';
-import theme, { GlobalStyling } from '../pages/theme';
+import Layout from 'components/layout/Layout';
+import theme, { GlobalStyling } from 'pages/theme';
 
-const Post = ({ data }) => {
+type PostProps = {
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        title: string;
+        date: string;
+      }
+      html: string;
+    }
+  }
+}
+const Post: React.FC<PostProps> = ({ data }) => {
   const post = data.markdownRemark;
   const { title, date } = post.frontmatter;
 
@@ -26,10 +35,6 @@ const Post = ({ data }) => {
       </Layout>
     </ThemeProvider>
   );
-};
-
-Post.propTypes = {
-  data: PropTypes.object.isRequired,
 };
 
 export default Post;

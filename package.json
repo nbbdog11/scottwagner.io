@@ -11,7 +11,8 @@
     "gatsby-develop": "gatsby develop",
     "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
     "serve": "gatsby serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typechecking": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "homepage": "http://johnscottwagner.com",
   "dependencies": {
     "gatsby": "^2.15.29",
+    "gatsby-plugin-typescript": "^2.1.27",
     "polished": "^3.4.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -32,6 +34,8 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.15",
+    "@types/styled-components": "^4.4.3",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
@@ -39,8 +43,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2",
+    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.7.5"
   }
 }

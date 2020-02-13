@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import MenuButton from '../../navigation/MenuButton/MenuButton';
-import NavigationOverlay from '../../navigation/NavigationOverlay/NavigationOverlay';
-import headshot from '../../../../images/headshot.jpg';
+import MenuButton from 'components/navigation/MenuButton';
+import NavigationOverlay from 'components/navigation/NavigationOverlay';
+import headshot from 'images/headshot.jpg';
 
 const StyledHeaderBar = styled.header`
   border-bottom: 6px solid ${(props) => props.theme.colors.secondary};
@@ -30,7 +30,7 @@ const Headshot = styled.img`
 `;
 
 const HeaderBar = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState<boolean>(false);
 
   return (
     <StyledHeaderBar>

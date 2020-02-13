@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
           const { slug } = node.fields;
           createPage({
             path: slug,
-            component: path.resolve('./src/templates/post.jsx'),
+            component: path.resolve('./src/templates/post.tsx'),
             context: {
               slug,
             },

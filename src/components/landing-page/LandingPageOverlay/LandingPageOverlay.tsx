@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Headshot from '../Headshot/Headshot';
-import JobsScroller from '../JobsScroller/JobsScroller';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import Headshot from 'components/landing-page/Headshot';
+import JobsScroller from 'components/landing-page/JobsScroller';
+import SocialLinks from 'components/landing-page/SocialLinks';
 
 const StyledLandingPageOverlay = styled.div`
   background-color: white;

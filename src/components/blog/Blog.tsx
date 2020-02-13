@@ -1,10 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import PostPreview from './PostPreview';
-import Layout from '../layout/Layout/Layout';
+import Layout from 'components/layout/Layout';
 
-const buildPostPreview = (node) => {
+type PostPreviewNode = {
+  frontmatter: {
+    title: string;
+    date: string;
+  },
+  excerpt: string;
+  fields: {
+    slug: string;
+  }
+}
+const buildPostPreview = (node: PostPreviewNode) => {
   const { frontmatter, excerpt } = node;
   const { slug } = node.fields;
   const { title, date } = frontmatter;
@@ -25,7 +34,13 @@ const buildPostPreview = (node) => {
   );
 };
 
-const Blog = ({ allMarkdownRemark }) => {
+type BlogProps = {
+  allMarkdownRemark: {
+    edges: { node: PostPreviewNode }[]
+  }
+}
+
+const Blog: React.FC<BlogProps> = ({ allMarkdownRemark }) => {
   const postPreviews = allMarkdownRemark.edges.map(({ node }) => buildPostPreview(node));
 
   return (
@@ -33,23 +48,6 @@ const Blog = ({ allMarkdownRemark }) => {
       {postPreviews}
     </Layout>
   );
-};
-
-const nodeShape = {
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-  }).isRequired,
-  excerpt: PropTypes.string.isRequired,
-  fields: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-Blog.propTypes = {
-  allMarkdownRemark: PropTypes.shape({
-    edges: PropTypes.arrayOf(nodeShape),
-  }).isRequired,
 };
 
 export default Blog;

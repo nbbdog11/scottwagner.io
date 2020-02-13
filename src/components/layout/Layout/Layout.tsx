@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
-import HeaderBar from '../HeaderBar/HeaderBar';
+import HeaderBar from 'components/layout/HeaderBar';
 
 
 const LayoutBackground = styled.div`
@@ -55,7 +54,12 @@ color: ${(props) => lighten(0.05, props.theme.colors.primary)};
   line-height: 1.6;
 `;
 
-const Layout = ({ children, title, subtitle }) => (
+type LayoutProps = {
+  title: string;
+  subtitle?: string;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, title, subtitle }) => (
   <>
     <HeaderBar />
     <LayoutBackground />
@@ -68,18 +72,5 @@ const Layout = ({ children, title, subtitle }) => (
     </LayoutMain>
   </>
 );
-
-Layout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-};
-
-Layout.defaultProps = {
-  subtitle: null,
-};
 
 export default Layout;
