@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Link, { ImageLink } from 'components/Link'
-import styled from 'styled-components';
-import MenuButton from 'components/navigation/MenuButton';
-import NavigationOverlay from 'components/navigation/NavigationOverlay';
-import headshot from 'images/headshot.jpg';
+import React from "react";
+import Link, { ImageLink } from "components/Link";
+import styled from "styled-components";
+import headshot from "images/headshot.jpg";
 
 const StyledHeaderBar = styled.header`
-  border-bottom: 6px solid ${(props) => props.theme.colors.secondary};
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 6px solid ${props => props.theme.colors.secondary};
   height: 50px;
   background-color: #ffffff;
   position: fixed;
@@ -29,26 +29,23 @@ const Headshot = styled.img`
   border-radius: 100%;
 `;
 
-const HeaderBar = () => {
-  const [navOpen, setNavOpen] = useState<boolean>(false);
+const HeaderLinks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+`;
 
+const HeaderBar = () => {
   return (
     <StyledHeaderBar>
       <ImageLink to="/">
         <Headshot src={headshot} alt="headshot" />
       </ImageLink>
-      <MenuButton
-        onOpen={() => {
-          setNavOpen(true);
-        }}
-      />
-      {navOpen && (
-        <NavigationOverlay
-          onClose={() => {
-            setNavOpen(false);
-          }}
-        />
-      )}
+      <HeaderLinks>
+        <Link to="/about">About</Link>
+        <Link to="/blog">Blog</Link>
+      </HeaderLinks>
     </StyledHeaderBar>
   );
 };
