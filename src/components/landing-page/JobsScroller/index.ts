@@ -1,1 +1,1 @@
-export { default } from './JobsScroller'
+export { default } from "./JobsScroller";

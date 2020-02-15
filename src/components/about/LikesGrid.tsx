@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledLikesGrid = styled.div`
   display: grid;
@@ -13,7 +13,6 @@ const StyledLikesGrid = styled.div`
   }
 
   & .likesColumnHeader {
-
   }
 `;
 
@@ -27,9 +26,7 @@ const LikesGrid = () => (
     <div>Things I Like:</div>
     <StyledLikesGrid>
       <div>
-        <LikesColumnHeader>
-          Software
-        </LikesColumnHeader>
+        <LikesColumnHeader>Software</LikesColumnHeader>
         <ul>
           <li>React</li>
           <li>Javascript</li>
@@ -39,9 +36,7 @@ const LikesGrid = () => (
         </ul>
       </div>
       <div>
-        <LikesColumnHeader>
-          Not-Software
-        </LikesColumnHeader>
+        <LikesColumnHeader>Not-Software</LikesColumnHeader>
         <ul>
           <li>Coffee</li>
           <li>Vinyl</li>

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import backgroundImage from 'images/background.jpg';
-import LandingPageOverlay from 'components/landing-page/LandingPageOverlay';
+import React from "react";
+import styled from "styled-components";
+import backgroundImage from "images/background.jpg";
+import LandingPageOverlay from "components/landing-page/LandingPageOverlay";
 
 const StyledLandingPage = styled.div`
   min-height: 100vh;

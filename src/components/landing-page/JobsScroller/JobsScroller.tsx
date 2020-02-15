@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 const jobs = [
-  'Software Developer',
-  'Coffee Hobbyist',
-  'Drummer',
-  'Modern Agile Believer',
-  'Villanova Alum',
-  'Philly Resident',
-  'Former Long Islander',
-  'Learner',
-  'Occassional Gym-Goer',
-  'Board Gamer',
+  "Software Developer",
+  "Coffee Hobbyist",
+  "Drummer",
+  "Modern Agile Believer",
+  "Villanova Alum",
+  "Philly Resident",
+  "Former Long Islander",
+  "Learner",
+  "Occassional Gym-Goer",
+  "Board Gamer"
 ];
 
 const Jobs = styled.div`
   text-align: center;
   font-weight: 400;
   margin-bottom: 20px;
-  color: ${(props) => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.secondary};
 `;
 
 const JobsScroller = () => {

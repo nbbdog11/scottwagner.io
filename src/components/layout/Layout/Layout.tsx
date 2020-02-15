@@ -1,11 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { darken, lighten } from 'polished';
-import HeaderBar from 'components/layout/HeaderBar';
-
+import React from "react";
+import styled from "styled-components";
+import { darken, lighten } from "polished";
+import HeaderBar from "components/layout/HeaderBar";
 
 const LayoutBackground = styled.div`
-  background-color: ${(props) => props.theme.colors.tertiary};
+  background-color: ${props => props.theme.colors.tertiary};
   position: fixed;
   top: 0;
   left: 0;
@@ -36,22 +35,22 @@ const LayoutMain = styled.div`
 `;
 
 const Title = styled.h1`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primary};
 `;
 
 const Subtitle = styled.h3`
-  color: ${(props) => lighten(0.03, props.theme.colors.primary)};
+  color: ${props => lighten(0.03, props.theme.colors.primary)};
 `;
 
 const Content = styled.div`
-color: ${(props) => lighten(0.05, props.theme.colors.primary)};
+  color: ${props => lighten(0.05, props.theme.colors.primary)};
   line-height: 1.6;
 `;
 
 type LayoutProps = {
   title: string;
   subtitle?: string;
-}
+};
 
 const Layout: React.FC<LayoutProps> = ({ children, title, subtitle }) => (
   <>
@@ -60,9 +59,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, subtitle }) => (
     <LayoutMain>
       <Title>{title}</Title>
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </LayoutMain>
   </>
 );

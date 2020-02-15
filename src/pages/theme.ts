@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyling = createGlobalStyle`
   html {
@@ -14,8 +14,8 @@ export const GlobalStyling = createGlobalStyle`
 
 export default {
   colors: {
-    primary: '#444444',
-    secondary: '#7081b3',
-    tertiary: '#f7f7f7',
-  },
+    primary: "#444444",
+    secondary: "#7081b3",
+    tertiary: "#f7f7f7"
+  }
 };

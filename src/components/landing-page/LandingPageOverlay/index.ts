@@ -1,1 +1,1 @@
-export { default } from './LandingPageOverlay'
+export { default } from "./LandingPageOverlay";

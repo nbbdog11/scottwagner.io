@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 type StyledSocialLinkIconProps = {
   activeColor: string;
-}
+};
 
 const StyledSocialLinkIcon = styled.a<StyledSocialLinkIconProps>`
   color: #8a8686;
   &:hover,
   &:focus {
-    color: ${(props) => props.activeColor}
+    color: ${props => props.activeColor};
   }
 `;
 
@@ -18,14 +18,11 @@ type SocialLinkIconProps = {
     activeColor: string;
     link: string;
     iconClass: string;
-  }
-}
+  };
+};
 
 const SocialLinkIcon: React.FC<SocialLinkIconProps> = ({ site }) => (
-  <StyledSocialLinkIcon
-    activeColor={site.activeColor}
-    href={site.link}
-  >
+  <StyledSocialLinkIcon activeColor={site.activeColor} href={site.link}>
     <i className={`${site.iconClass} fa-2x`} />
   </StyledSocialLinkIcon>
 );
