@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
-import headshot from 'images/headshot.jpg';
+import React from "react";
+import { ImageLink } from "components/Link";
+import styled from "styled-components";
+import headshot from "images/headshot.jpg";
 
 const StyledHeadshot = styled.img`
   margin: auto;
@@ -10,9 +10,9 @@ const StyledHeadshot = styled.img`
 `;
 
 const Headshot = () => (
-  <Link to="about">
+  <ImageLink to="about">
     <StyledHeadshot src={headshot} alt="headshot" />
-  </Link>
+  </ImageLink>
 );
 
 export default Headshot;

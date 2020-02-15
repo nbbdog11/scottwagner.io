@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'components/Link'
 import styled from 'styled-components';
 import Headshot from 'components/landing-page/Headshot';
 import JobsScroller from 'components/landing-page/JobsScroller';

@@ -1,24 +1,24 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import Link from "components/Link";
 
 type PostPrviewProps = {
   title: string;
   date: string;
   excerpt: string;
   slug: string;
-}
+};
 
 const PostPreview: React.FC<PostPrviewProps> = ({
   title,
   date,
   excerpt,
-  slug,
+  slug
 }) => {
   return (
     <div>
-      <Link to={slug}>
-        <h3>{title}</h3>
-      </Link>
+      <h3>
+        <Link to={slug}>{title}</Link>
+      </h3>
       <p>{date}</p>
       <p>{excerpt}</p>
     </div>

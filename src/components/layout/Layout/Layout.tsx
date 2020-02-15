@@ -33,12 +33,6 @@ const LayoutMain = styled.div`
     padding: 5px 20px 5px;
     min-height: 100vh;
   }
-
-
-  a:hover {
-    text-decoration: underline;
-    color: ${(props) => darken(0.1, props.theme.colors.secondary)};
-  }
 `;
 
 const Title = styled.h1`

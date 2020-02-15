@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import Link, { ImageLink } from 'components/Link'
 import styled from 'styled-components';
 import MenuButton from 'components/navigation/MenuButton';
 import NavigationOverlay from 'components/navigation/NavigationOverlay';
@@ -34,9 +34,9 @@ const HeaderBar = () => {
 
   return (
     <StyledHeaderBar>
-      <Link to="/">
+      <ImageLink to="/">
         <Headshot src={headshot} alt="headshot" />
-      </Link>
+      </ImageLink>
       <MenuButton
         onOpen={() => {
           setNavOpen(true);

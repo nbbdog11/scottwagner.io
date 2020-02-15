@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { darken } from 'polished';
 
 export const GlobalStyling = createGlobalStyle`
   html {
@@ -10,11 +9,6 @@ export const GlobalStyling = createGlobalStyle`
   body {
     font-family: "Nunito Sans", sans-serif;
     margin: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: ${(props) => darken(0.1, props.theme.colors.secondary)};
   }
 `;
 
