@@ -9,23 +9,23 @@ export default () => (
     <GlobalStyling />
     <StaticQuery
       query={graphql`
-      {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-          edges {
-            node {
-              frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
+        {
+          allMdx(sort: { order: DESC, fields: frontmatter___date }) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                }
+                fields {
+                  slug
+                }
+                excerpt
               }
-              fields {
-                slug
-              }
-              excerpt
             }
           }
         }
-      }
-    `}
+      `}
       render={Blog}
     />
   </ThemeProvider>

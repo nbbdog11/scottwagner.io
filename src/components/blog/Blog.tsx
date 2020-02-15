@@ -35,13 +35,13 @@ const buildPostPreview = (node: PostPreviewNode) => {
 };
 
 type BlogProps = {
-  allMarkdownRemark: {
+  allMdx: {
     edges: { node: PostPreviewNode }[]
   }
 }
 
-const Blog: React.FC<BlogProps> = ({ allMarkdownRemark }) => {
-  const postPreviews = allMarkdownRemark.edges.map(({ node }) => buildPostPreview(node));
+const Blog: React.FC<BlogProps> = ({ allMdx }) => {
+  const postPreviews = allMdx.edges.map(({ node }) => buildPostPreview(node));
 
   return (
     <Layout title="Blog">
