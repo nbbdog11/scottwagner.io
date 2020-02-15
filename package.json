@@ -9,7 +9,8 @@
     "develop": "npm run gatsby-develop",
     "gatsby-build": "gatsby build",
     "gatsby-develop": "gatsby develop",
-    "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write 'src/**/*.{js,css,ts,tsx,json,mdx}'",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typechecking": "tsc --noEmit"
@@ -42,6 +43,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
@@ -52,6 +54,7 @@
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
     "npm-run-all": "^4.1.5",
+    "prettier": "1.19.1",
     "typescript": "^3.7.5"
   }
 }
