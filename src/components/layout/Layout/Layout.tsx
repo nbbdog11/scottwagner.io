@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 import HeaderBar from "components/layout/HeaderBar";
 
 const LayoutBackground = styled.div`

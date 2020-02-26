@@ -5,7 +5,7 @@ import Layout from "components/layout/Layout";
 import LikesTable from "components/about/LikesGrid";
 import theme, { GlobalStyling } from "./theme";
 
-export default () => (
+const About = () => (
   <ThemeProvider theme={theme}>
     <Helmet>
       <title>Scott Wagner | About</title>
@@ -20,3 +20,5 @@ export default () => (
     </Layout>
   </ThemeProvider>
 );
+
+export default About;

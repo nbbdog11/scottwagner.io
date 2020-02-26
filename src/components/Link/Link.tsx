@@ -13,5 +13,6 @@ export default styled(ImageLink)`
   &:focus {
     border-bottom: 1px solid
       ${props => darken(0.1, props.theme.colors.secondary)};
+    transform: scale(1.1);
   }
 `;
