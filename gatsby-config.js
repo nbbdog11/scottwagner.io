@@ -1,4 +1,6 @@
-import path from "path";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 module.exports = {
   plugins: [
