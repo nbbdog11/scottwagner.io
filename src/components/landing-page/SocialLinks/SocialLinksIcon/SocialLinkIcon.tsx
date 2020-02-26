@@ -10,6 +10,7 @@ const StyledSocialLinkIcon = styled.a<StyledSocialLinkIconProps>`
   &:hover,
   &:focus {
     color: ${props => props.activeColor};
+    transform: scale(1.2);
   }
 `;
 
