@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import LandingPage from "components/landing-page/LandingPage";
-import theme, { GlobalStyling } from "./theme";
+import theme, { GlobalStyling } from "../theme";
 
 const Index = () => (
   <ThemeProvider theme={theme}>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SocialLinkIcon from "./SocialLinksIcon";
-import theme from "pages/theme";
+import theme from "../../../theme";
 
 const socialSites = [
   {

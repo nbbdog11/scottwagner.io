@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import BlogComponent from "components/blog/Blog";
-import theme, { GlobalStyling } from "./theme";
+import theme, { GlobalStyling } from "../theme";
 
 const Blog = () => (
   <ThemeProvider theme={theme}>

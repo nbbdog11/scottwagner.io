@@ -5,7 +5,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { ThemeProvider } from "styled-components";
 import Layout from "components/layout/Layout";
-import theme, { GlobalStyling } from "pages/theme";
+import theme, { GlobalStyling } from "../theme";
 import Link from "components/Link";
 
 type PostProps = {
