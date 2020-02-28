@@ -25,7 +25,8 @@ const StyledHeaderBar = styled.header`
 `;
 
 const Headshot = styled.img`
-  max-height: 100%;
+  height: 50px;
+  width: 50px;
   border-radius: 100%;
 `;
 
