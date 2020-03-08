@@ -3,7 +3,7 @@ import styled from "styled-components";
 import bitmoji from "images/bitmoji.png";
 import Headshot from "../Headshot";
 import SocialLinks from "../SocialLinks";
-import { darken } from "polished";
+import ContentBox, { StyledContentBox } from "../ContentBox";
 
 const Header = styled.header`
   display: flex;
@@ -26,25 +26,7 @@ const ContentContainer = styled.div`
   align-items: center;
 `;
 
-const ContentBox = styled.section`
-  min-height: 300px;
-  width: 90%;
-  margin: 1em 0;
-  border: 5px solid ${props => props.theme.colors.secondary};
-  border-radius: 2px;
-  box-shadow: 2px 6px 25px ${props => props.theme.colors.secondary};
-  box-sizing: border-box;
-`;
-
-const ContentBoxHeader = styled.h2`
-  background: ${props => props.theme.colors.secondary};
-  color: white;
-  margin: 0;
-  padding: 1em 0;
-  text-align: center;
-`;
-
-const AboutBox = styled(ContentBox)`
+const AboutBox = styled(StyledContentBox)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,40 +41,6 @@ const AboutBox = styled(ContentBox)`
   & ${Headshot} {
     position: absolute;
     top: -75px;
-  }
-`;
-
-const ContentBoxItems = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 2em;
-  background: white;
-  padding: 1em 2em;
-`;
-
-const ContentBoxItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${props => props.theme.colors.primary};
-  color: white;
-  height: 100px;
-  a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    text-decoration: none;
-    &:visited {
-      color: white;
-    }
-  }
-  &:hover {
-    background: ${props => darken(0.1, props.theme.colors.primary)};
-    box-shadow: 2px 6px 25px ${props => darken(0.1, props.theme.colors.primary)};
-    transform: scale(1.01);
   }
 `;
 
@@ -136,36 +84,9 @@ const LandingPage = () => {
           <h3>Full-Stack Web Developer</h3>
           <h3>Team Lead</h3>
         </AboutBox>
-        <ContentBox>
-          <ContentBoxHeader>Projects</ContentBoxHeader>
-          <ContentBoxItems>
-            {projects.map(project => (
-              <ContentBoxItem key={project.name}>
-                <a href={project.link}>{project.name}</a>
-              </ContentBoxItem>
-            ))}
-          </ContentBoxItems>
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxHeader>Talks</ContentBoxHeader>
-          <ContentBoxItems>
-            {talks.map(talk => (
-              <ContentBoxItem key={talk.name}>
-                <a href={talk.link}>{talk.name}</a>
-              </ContentBoxItem>
-            ))}
-          </ContentBoxItems>
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxHeader>Blog Posts</ContentBoxHeader>
-          <ContentBoxItems>
-            {blogPosts.map(blogPost => (
-              <ContentBoxItem key={blogPost.name}>
-                <a href={blogPost.link}>{blogPost.name}</a>
-              </ContentBoxItem>
-            ))}
-          </ContentBoxItems>
-        </ContentBox>
+        <ContentBox header="Projects" items={projects} />
+        <ContentBox header="Talks" items={talks} />
+        <ContentBox header="Blog Posts" items={blogPosts} />
       </ContentContainer>
     </>
   );
