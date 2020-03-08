@@ -58,7 +58,7 @@ const AboutBox = styled(ContentBox)`
 
 const ContentBoxItems = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2em;
   background: white;
   padding: 1em 2em;
