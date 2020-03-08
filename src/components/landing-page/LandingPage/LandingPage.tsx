@@ -1,22 +1,137 @@
 import React from "react";
 import styled from "styled-components";
-import backgroundImage from "images/background.jpg";
-import LandingPageOverlay from "components/landing-page/LandingPageOverlay";
+import bitmoji from "images/bitmoji.png";
+import Headshot from "../Headshot";
+import SocialLinks from "../SocialLinks";
+import { darken } from "polished";
 
-const StyledLandingPage = styled.div`
-  min-height: 100vh;
-  @media (min-width: 400px) {
-    background-image: url(${backgroundImage});
-    background-position: center;
-    background-size: cover;
-    display: flex;
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0.5em;
+  margin-bottom: 100px;
+`;
+
+const Bitmoji = styled.img`
+  width: 80px;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ContentBox = styled.section`
+  min-height: 300px;
+  width: 90%;
+  margin: 1em 0;
+  border: 5px solid ${props => props.theme.colors.secondary};
+  border-radius: 2px;
+  box-shadow: 2px 6px 25px ${props => props.theme.colors.secondary};
+`;
+
+const ContentBoxHeader = styled.h2`
+  background: ${props => props.theme.colors.secondary};
+  color: white;
+  margin: 0;
+  padding: 1em 0;
+  text-align: center;
+`;
+
+const AboutBox = styled(ContentBox)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & ${Headshot} {
+    position: absolute;
+    top: -75px;
   }
 `;
 
-const LandingPage = () => (
-  <StyledLandingPage>
-    <LandingPageOverlay />
-  </StyledLandingPage>
-);
+const ContentBoxItems = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  background: white;
+  padding: 1em 2em;
+`;
+
+const ContentBoxItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${props => props.theme.colors.primary};
+  color: white;
+  height: 100px;
+  &:hover {
+    background: ${props => darken(0.1, props.theme.colors.primary)};
+    box-shadow: 2px 6px 25px ${props => darken(0.1, props.theme.colors.primary)};
+    transform: scale(1.01);
+  }
+`;
+
+const projects = [
+  {
+    name: "scottwagner.io",
+    link: "https://github.com/nbbdog11/scottwagner.io"
+  },
+  {
+    name: "http-response-tester",
+    link: "https://github.com/nbbdog11/http-response-tester"
+  }
+];
+
+const talks = [
+  {
+    name: "TDD and UIs: What, Why, and How",
+    link: "https://github.com/nbbdog11/tdd-ui-presentation"
+  }
+];
+
+const LandingPage = () => {
+  return (
+    <>
+      <Header>
+        <Bitmoji src={bitmoji} alt="Scott Bitmoji" />
+      </Header>
+      <SocialLinks />
+      <ContentContainer>
+        <AboutBox>
+          <Headshot />
+          <h1>Scott Wagner</h1>
+          <h3>Full-Stack Web Developer and Team Lead</h3>
+        </AboutBox>
+        <ContentBox>
+          <ContentBoxHeader>Projects</ContentBoxHeader>
+          <ContentBoxItems>
+            {projects.map(project => (
+              <a key={project.name} href={project.link}>
+                <ContentBoxItem>{project.name}</ContentBoxItem>
+              </a>
+            ))}
+          </ContentBoxItems>
+        </ContentBox>
+        <ContentBox>
+          <ContentBoxHeader>Talks</ContentBoxHeader>
+          <ContentBoxItems>
+            {talks.map(talk => (
+              <a key={talk.name} href={talk.link}>
+                <ContentBoxItem>{talk.name}</ContentBoxItem>
+              </a>
+            ))}
+          </ContentBoxItems>
+        </ContentBox>
+      </ContentContainer>
+    </>
+  );
+};
 
 export default LandingPage;

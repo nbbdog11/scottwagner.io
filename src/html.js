@@ -2,7 +2,7 @@
 import React from "react";
 
 export default props => (
-  <html {...props.htmlAttributes}>
+  <html {...props.htmlAttributes} lang="en">
     <head>
       <title>Scott Wagner</title>
       <meta charSet="utf-8" />
@@ -18,7 +18,7 @@ export default props => (
       {props.headComponents}
       <script
         defer
-        src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+        src="https://use.fontawesome.com/releases/v5.4.0/js/all.js"
       ></script>
       <script
         async

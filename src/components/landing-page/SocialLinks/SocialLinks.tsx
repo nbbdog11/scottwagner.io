@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import SocialLinkIcon from "./SocialLinksIcon";
-import theme from "../../../theme";
 
 const socialSites = [
   {
@@ -30,32 +29,22 @@ const socialSites = [
   },
   {
     name: "Blog",
-    link: "/blog",
-    iconClass: "fas fa-book",
-    activeColor: theme.colors.secondary
+    link: "https://dev.to/nbbdog11",
+    iconClass: "fab fa-dev",
+    activeColor: "#0a0a0a"
   }
 ];
 
 const StyledSocialLinks = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-column-gap: 12px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 12px;
   justify-items: center;
-  background-color: ${props => props.theme.colors.tertiary};
-  @media (max-width: 399px) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  @media (max-height: 300px) {
-    padding: 5px;
-  }
-
-  @media (min-height: 301px) {
-    padding: 15px;
-  }
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
 `;
 
 const SocialLinks = () => (

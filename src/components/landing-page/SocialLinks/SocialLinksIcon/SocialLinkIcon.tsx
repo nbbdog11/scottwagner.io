@@ -6,6 +6,7 @@ type StyledSocialLinkIconProps = {
 };
 
 const StyledSocialLinkIcon = styled.a<StyledSocialLinkIconProps>`
+  background: transparent;
   color: #8a8686;
   &:hover,
   &:focus {
@@ -19,11 +20,16 @@ type SocialLinkIconProps = {
     activeColor: string;
     link: string;
     iconClass: string;
+    name: string;
   };
 };
 
 const SocialLinkIcon: React.FC<SocialLinkIconProps> = ({ site }) => (
-  <StyledSocialLinkIcon activeColor={site.activeColor} href={site.link}>
+  <StyledSocialLinkIcon
+    activeColor={site.activeColor}
+    href={site.link}
+    title={site.name}
+  >
     <i className={`${site.iconClass} fa-2x`} />
   </StyledSocialLinkIcon>
 );

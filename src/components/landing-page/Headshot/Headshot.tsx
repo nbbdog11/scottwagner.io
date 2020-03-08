@@ -1,18 +1,17 @@
 import React from "react";
-import { ImageLink } from "components/Link";
 import styled from "styled-components";
 import headshot from "images/headshot.jpg";
 
-const StyledHeadshot = styled.img`
+type HeadshotProps = {
+  className?: string;
+};
+
+const Headshot: React.FC<HeadshotProps> = ({ className }) => (
+  <img src={headshot} alt="headshot" className={className} />
+);
+
+export default styled(Headshot)`
   margin: auto;
   display: block;
   border-radius: 100%;
 `;
-
-const Headshot = () => (
-  <ImageLink to="about">
-    <StyledHeadshot src={headshot} alt="headshot" />
-  </ImageLink>
-);
-
-export default Headshot;
