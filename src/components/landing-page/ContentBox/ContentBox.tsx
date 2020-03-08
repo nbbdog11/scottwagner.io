@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { darken } from "polished";
+import { ItemType } from "./ContentBoxItem/types";
+import ContentBoxItem from "./ContentBoxItem";
 
 export const StyledContentBox = styled.section`
   min-height: 300px;
@@ -28,32 +29,6 @@ const ContentBoxItems = styled.div`
   padding: 1em 2em;
 `;
 
-const ContentBoxItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${props => props.theme.colors.primary};
-  color: white;
-  height: 100px;
-  a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    text-decoration: none;
-    &:visited {
-      color: white;
-    }
-  }
-  &:hover {
-    background: ${props => darken(0.1, props.theme.colors.primary)};
-    box-shadow: 2px 6px 25px ${props => darken(0.1, props.theme.colors.primary)};
-    transform: scale(1.01);
-  }
-`;
-
 type ContentBoxProps = {
   header: string;
   items: {
@@ -63,12 +38,27 @@ type ContentBoxProps = {
 };
 
 const ContentBox: React.FC<ContentBoxProps> = ({ header, items }) => {
+  const [activeItem, setActiveItem] = useState("");
+  const clearActiveItem = () => setActiveItem("");
+  const getItemType = (name: string) => {
+    if (activeItem === name) {
+      return ItemType.ACTIVE;
+    }
+    return activeItem === "" ? ItemType.DEFAULT : ItemType.INACTIVE;
+  };
   return (
     <StyledContentBox>
       <ContentBoxHeader>{header}</ContentBoxHeader>
       <ContentBoxItems>
         {items.map(item => (
-          <ContentBoxItem key={item.name}>
+          <ContentBoxItem
+            key={item.name}
+            onMouseOver={() => setActiveItem(item.name)}
+            onMouseOut={clearActiveItem}
+            onFocus={() => setActiveItem(item.name)}
+            onBlur={clearActiveItem}
+            type={getItemType(item.name)}
+          >
             <a href={item.link}>{item.name}</a>
           </ContentBoxItem>
         ))}
