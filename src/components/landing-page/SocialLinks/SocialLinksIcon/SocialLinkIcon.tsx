@@ -6,7 +6,7 @@ type StyledSocialLinkIconProps = {
 };
 
 const StyledSocialLinkIcon = styled.a<StyledSocialLinkIconProps>`
-  background: transparent;
+  background: white;
   color: #8a8686;
   &:hover,
   &:focus {

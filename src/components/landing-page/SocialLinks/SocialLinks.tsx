@@ -42,6 +42,7 @@ const StyledSocialLinks = styled.div`
   justify-items: center;
   background: white;
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   padding: 0.5em;
