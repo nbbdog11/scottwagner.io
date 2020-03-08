@@ -33,6 +33,7 @@ const ContentBox = styled.section`
   border: 5px solid ${props => props.theme.colors.secondary};
   border-radius: 2px;
   box-shadow: 2px 6px 25px ${props => props.theme.colors.secondary};
+  box-sizing: border-box;
 `;
 
 const ContentBoxHeader = styled.h2`
@@ -49,6 +50,11 @@ const AboutBox = styled(ContentBox)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2em;
+
+  h3 {
+    margin: 0;
+  }
 
   & ${Headshot} {
     position: absolute;
@@ -107,7 +113,8 @@ const LandingPage = () => {
         <AboutBox>
           <Headshot />
           <h1>Scott Wagner</h1>
-          <h3>Full-Stack Web Developer and Team Lead</h3>
+          <h3>Full-Stack Web Developer</h3>
+          <h3>Team Lead</h3>
         </AboutBox>
         <ContentBox>
           <ContentBoxHeader>Projects</ContentBoxHeader>
