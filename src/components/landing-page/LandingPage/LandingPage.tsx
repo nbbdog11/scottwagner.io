@@ -77,6 +77,7 @@ const ContentBoxItem = styled.div`
   background: ${props => props.theme.colors.primary};
   color: white;
   height: 100px;
+  padding: 0.25em 1em;
   &:hover {
     background: ${props => darken(0.1, props.theme.colors.primary)};
     box-shadow: 2px 6px 25px ${props => darken(0.1, props.theme.colors.primary)};
