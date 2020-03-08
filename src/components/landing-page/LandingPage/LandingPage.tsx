@@ -102,6 +102,14 @@ const talks = [
   }
 ];
 
+const blogPosts = [
+  {
+    name: "The Hunger for Learning: Based on a True Story",
+    link:
+      "https://dev.to/nbbdog11/the-hunger-for-learning-based-on-a-true-story-2bke"
+  }
+];
+
 const LandingPage = () => {
   return (
     <>
@@ -132,6 +140,16 @@ const LandingPage = () => {
             {talks.map(talk => (
               <a key={talk.name} href={talk.link}>
                 <ContentBoxItem>{talk.name}</ContentBoxItem>
+              </a>
+            ))}
+          </ContentBoxItems>
+        </ContentBox>
+        <ContentBox>
+          <ContentBoxHeader>Blog Posts</ContentBoxHeader>
+          <ContentBoxItems>
+            {blogPosts.map(blogPost => (
+              <a key={blogPost.name} href={blogPost.link}>
+                <ContentBoxItem>{blogPost.name}</ContentBoxItem>
               </a>
             ))}
           </ContentBoxItems>
