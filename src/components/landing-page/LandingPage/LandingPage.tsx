@@ -77,7 +77,18 @@ const ContentBoxItem = styled.div`
   background: ${props => props.theme.colors.primary};
   color: white;
   height: 100px;
-  padding: 0.25em 1em;
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    text-decoration: none;
+    &:visited {
+      color: white;
+    }
+  }
   &:hover {
     background: ${props => darken(0.1, props.theme.colors.primary)};
     box-shadow: 2px 6px 25px ${props => darken(0.1, props.theme.colors.primary)};
@@ -129,9 +140,9 @@ const LandingPage = () => {
           <ContentBoxHeader>Projects</ContentBoxHeader>
           <ContentBoxItems>
             {projects.map(project => (
-              <a key={project.name} href={project.link}>
-                <ContentBoxItem>{project.name}</ContentBoxItem>
-              </a>
+              <ContentBoxItem key={project.name}>
+                <a href={project.link}>{project.name}</a>
+              </ContentBoxItem>
             ))}
           </ContentBoxItems>
         </ContentBox>
@@ -139,9 +150,9 @@ const LandingPage = () => {
           <ContentBoxHeader>Talks</ContentBoxHeader>
           <ContentBoxItems>
             {talks.map(talk => (
-              <a key={talk.name} href={talk.link}>
-                <ContentBoxItem>{talk.name}</ContentBoxItem>
-              </a>
+              <ContentBoxItem key={talk.name}>
+                <a href={talk.link}>{talk.name}</a>
+              </ContentBoxItem>
             ))}
           </ContentBoxItems>
         </ContentBox>
@@ -149,9 +160,9 @@ const LandingPage = () => {
           <ContentBoxHeader>Blog Posts</ContentBoxHeader>
           <ContentBoxItems>
             {blogPosts.map(blogPost => (
-              <a key={blogPost.name} href={blogPost.link}>
-                <ContentBoxItem>{blogPost.name}</ContentBoxItem>
-              </a>
+              <ContentBoxItem key={blogPost.name}>
+                <a href={blogPost.link}>{blogPost.name}</a>
+              </ContentBoxItem>
             ))}
           </ContentBoxItems>
         </ContentBox>
