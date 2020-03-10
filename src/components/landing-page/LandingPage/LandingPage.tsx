@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 import bitmoji from "images/bitmoji.png";
 import Headshot from "../Headshot";
 import SocialLinks from "../SocialLinks";
@@ -70,13 +70,86 @@ const blogPosts = [
   }
 ];
 
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(30px) scaleY(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scaleY(1);
+  }
+`;
+const slideOut = keyframes`
+  from {
+    opacity: 1;
+    transform: translateX(0px) scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px) scaleY(0.75);
+  }
+`;
+
+type SocialContainerProps = {
+  socialVisible: boolean;
+};
+const SocialContainer = styled.div<SocialContainerProps>`
+  ${props =>
+    props.socialVisible
+      ? css`
+          opacity: 1;
+          transform: translateX(0px);
+          animation: ${slideIn} 0.2s ease-in;
+        `
+      : css`
+          opacity: 0;
+          transform: translateX(30px);
+          animation: ${slideOut} 0.2s ease-in;
+        `}
+  position: fixed;
+  top: calc(80px + 1em);
+  right: 0;
+  z-index: 10;
+`;
+
+const ConnectButton = styled.button`
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 16px;
+  font-family: unset;
+  border-radius: 20px;
+  background: white;
+  color: ${props => props.theme.colors.primary};
+  border: 2px solid ${props => props.theme.colors.primary};
+  &:hover {
+    background: ${props => props.theme.colors.primary};
+    color: white;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
 const LandingPage = () => {
+  const [socialVisible, setSocialVisible] = useState(false);
   return (
     <>
       <Header>
         <Bitmoji src={bitmoji} alt="Scott Bitmoji" />
+        <ConnectButton
+          onClick={() =>
+            setSocialVisible(prevSocialVisible => !prevSocialVisible)
+          }
+        >
+          Connect
+        </ConnectButton>
       </Header>
-      <SocialLinks />
+      <SocialContainer socialVisible={socialVisible}>
+        <SocialLinks />
+      </SocialContainer>
+
       <ContentContainer>
         <AboutBox>
           <Headshot />
