@@ -50,16 +50,17 @@ const ContentBox: React.FC<ContentBoxProps> = ({ header, items }) => {
     <StyledContentBox>
       <ContentBoxHeader>{header}</ContentBoxHeader>
       <ContentBoxItems>
-        {items.map(item => (
+        {items.map(({ name, link }) => (
           <ContentBoxItem
-            key={item.name}
-            onMouseOver={() => setActiveItem(item.name)}
+            key={name}
+            onMouseOver={() => setActiveItem(name)}
             onMouseOut={clearActiveItem}
-            onFocus={() => setActiveItem(item.name)}
+            onFocus={() => setActiveItem(name)}
             onBlur={clearActiveItem}
-            type={getItemType(item.name)}
+            link={link}
+            type={getItemType(name)}
           >
-            <a href={item.link}>{item.name}</a>
+            {name}
           </ContentBoxItem>
         ))}
       </ContentBoxItems>

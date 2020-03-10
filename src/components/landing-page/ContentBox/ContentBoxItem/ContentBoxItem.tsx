@@ -1,25 +1,16 @@
+import React from "react";
 import styled from "styled-components";
 import { darken, lighten } from "polished";
 import { ContentBoxItemProps, ItemType } from "./types";
 
-const ContentBoxItem = styled.div<ContentBoxItemProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+type StyledContentBoxItemProps = Pick<ContentBoxItemProps, "type">;
+const StyledContentBoxItem = styled.a<StyledContentBoxItemProps>`
+  display: block;
   background: ${props => props.theme.colors.primary};
   color: white;
-  height: 100px;
-  a {
-    display: block;
-    height: 100%;
-    width: 100%;
+  text-decoration: none;
+  &:visited {
     color: white;
-    text-align: center;
-    line-height: 100px;
-    text-decoration: none;
-    &:visited {
-      color: white;
-    }
   }
   ${props => {
     if (props.type === ItemType.ACTIVE) {
@@ -37,8 +28,38 @@ const ContentBoxItem = styled.div<ContentBoxItemProps>`
     }
     return {};
   }}
-  &:hover {
-  }
 `;
+
+const ContentContainer = styled.div`
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em;
+  text-align: center;
+`;
+
+const ContentBoxItem: React.FC<ContentBoxItemProps> = ({
+  onMouseOver,
+  onMouseOut,
+  onFocus,
+  onBlur,
+  children,
+  link,
+  type
+}) => {
+  return (
+    <StyledContentBoxItem
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      href={link}
+      type={type}
+    >
+      <ContentContainer>{children}</ContentContainer>
+    </StyledContentBoxItem>
+  );
+};
 
 export default ContentBoxItem;
