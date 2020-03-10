@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
 import bitmoji from "images/bitmoji.png";
 import Headshot from "../Headshot";
 import SocialLinks from "../SocialLinks";
@@ -70,27 +70,6 @@ const blogPosts = [
   }
 ];
 
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(30px) scaleY(0.75);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px) scaleY(1);
-  }
-`;
-const slideOut = keyframes`
-  from {
-    opacity: 1;
-    transform: translateX(0px) scaleY(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(30px) scaleY(0.75);
-  }
-`;
-
 type SocialContainerProps = {
   socialVisible: boolean;
 };
@@ -98,15 +77,13 @@ const SocialContainer = styled.div<SocialContainerProps>`
   ${props =>
     props.socialVisible
       ? css`
-          opacity: 1;
-          transform: translateX(0px);
-          animation: ${slideIn} 0.2s ease-in;
+          transform: translateX(0px) scaleY(1);
         `
       : css`
-          opacity: 0;
-          transform: translateX(30px);
-          animation: ${slideOut} 0.2s ease-in;
+          transform: translateX(100px) scaleY(0.75);
         `}
+
+  transition: transform 0.5s ease-out;
   position: fixed;
   top: calc(80px + 1em);
   right: 0;
