@@ -3,6 +3,8 @@ node_modules/
 .next/
 out/
 
+.vscode/
+
 .terraform/
 *.tfstate
 *.tfstate.*
