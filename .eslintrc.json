@@ -5,14 +5,16 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "rules": {
     "import/no-extraneous-dependencies": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react-hooks/rules-of-hooks": "error",
     "react/prop-types": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "globals": {
     "graphql": false,
