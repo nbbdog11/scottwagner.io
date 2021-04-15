@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import bitmoji from "images/bitmoji.png";
+import RelativeImage from "../RelativeImage";
 import Headshot from "../Headshot";
 import SocialLinks from "../SocialLinks";
 import ContentBox, { StyledContentBox } from "../ContentBox";
@@ -16,7 +16,7 @@ const Header = styled.header`
   margin-bottom: 100px;
 `;
 
-const Bitmoji = styled.img`
+const Bitmoji = styled(RelativeImage)`
   width: 80px;
 `;
 
@@ -37,44 +37,46 @@ const AboutBox = styled(StyledContentBox)`
   h3 {
     margin: 0;
   }
+`;
 
-  & ${Headshot} {
-    position: absolute;
-    top: -75px;
-  }
+const HeadshotContainer = styled.div`
+  position: absolute;
+  top: -75px;
+  height: 150px;
+  width: 150px;
 `;
 
 const projects = [
   {
     name: "scottwagner.io",
-    link: "https://github.com/nbbdog11/scottwagner.io"
+    link: "https://github.com/nbbdog11/scottwagner.io",
   },
   {
     name: "http-response-tester",
-    link: "https://github.com/nbbdog11/http-response-tester"
-  }
+    link: "https://github.com/nbbdog11/http-response-tester",
+  },
 ];
 
 const talks = [
   {
     name: "TDD and UIs: What, Why, and How",
-    link: "https://github.com/nbbdog11/tdd-ui-presentation"
-  }
+    link: "https://github.com/nbbdog11/tdd-ui-presentation",
+  },
 ];
 
 const blogPosts = [
   {
     name: "The Hunger for Learning: Based on a True Story",
     link:
-      "https://dev.to/nbbdog11/the-hunger-for-learning-based-on-a-true-story-2bke"
-  }
+      "https://dev.to/nbbdog11/the-hunger-for-learning-based-on-a-true-story-2bke",
+  },
 ];
 
 type SocialContainerProps = {
   socialVisible: boolean;
 };
 const SocialContainer = styled.div<SocialContainerProps>`
-  ${props =>
+  ${(props) =>
     props.socialVisible
       ? css`
           transform: translateX(0px) scaleY(1);
@@ -97,10 +99,10 @@ const ConnectButton = styled.button`
   font-family: unset;
   border-radius: 20px;
   background: white;
-  color: ${props => props.theme.colors.primary};
-  border: 2px solid ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
+  border: 2px solid ${(props) => props.theme.colors.primary};
   &:hover {
-    background: ${props => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.primary};
     color: white;
     outline: none;
   }
@@ -114,10 +116,15 @@ const LandingPage = () => {
   return (
     <>
       <Header>
-        <Bitmoji src={bitmoji} alt="Scott Bitmoji" />
+        <Bitmoji
+          src="/bitmoji.png"
+          alt="Scott Bitmoji"
+          height={80}
+          width={80}
+        />
         <ConnectButton
           onClick={() =>
-            setSocialVisible(prevSocialVisible => !prevSocialVisible)
+            setSocialVisible((prevSocialVisible) => !prevSocialVisible)
           }
         >
           Connect
@@ -126,10 +133,11 @@ const LandingPage = () => {
       <SocialContainer socialVisible={socialVisible}>
         <SocialLinks />
       </SocialContainer>
-
       <ContentContainer>
         <AboutBox>
-          <Headshot />
+          <HeadshotContainer>
+            <Headshot />
+          </HeadshotContainer>
           <h1>Scott Wagner</h1>
           <h3>Full-Stack Web Developer</h3>
           <h3>Team Lead</h3>

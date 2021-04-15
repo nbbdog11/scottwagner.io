@@ -3,15 +3,13 @@
   "version": "0.3.0",
   "description": "Blog of Scott Wagner",
   "scripts": {
-    "build": "npm-run-all lint clean gatsby-build",
-    "clean": "rm -rf .cache/ public/",
+    "dev": "next dev",
+    "build": "next build && next export",
+    "serve": "serve out",
+    "start": "next start",
     "deploy": "npm run build && ./deploy.sh",
-    "develop": "npm run gatsby-develop",
-    "gatsby-build": "gatsby build",
-    "gatsby-develop": "gatsby develop",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --write 'src/**/*.{js,css,ts,tsx,json,mdx}'",
-    "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typechecking": "tsc --noEmit"
   },
@@ -26,19 +24,13 @@
   },
   "homepage": "http://johnscottwagner.com",
   "dependencies": {
-    "gatsby": "^2.15.29",
-    "gatsby-plugin-typescript": "^2.1.27",
+    "next": "^10.1.3",
     "polished": "^3.4.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^1.5.5",
-    "@mdx-js/react": "^1.5.5",
-    "@types/mdx-js__react": "^1.5.0",
-    "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.3",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
@@ -50,13 +42,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2",
-    "gatsby-plugin-mdx": "^1.0.73",
-    "gatsby-plugin-root-import": "^2.0.5",
-    "gatsby-plugin-styled-components": "^3.1.19",
-    "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-remark": "^2.6.27",
     "npm-run-all": "^4.1.5",
     "prettier": "1.19.1",
+    "serve": "^11.3.2",
     "typescript": "^3.7.5"
   }
 }

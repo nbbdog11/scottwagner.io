@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import headshot from "images/headshot.jpg";
+import RelativeImage from "../RelativeImage";
 
 type HeadshotProps = {
   className?: string;
 };
 
 const Headshot: React.FC<HeadshotProps> = ({ className }) => (
-  <img src={headshot} alt="headshot" className={className} />
+  <RelativeImage
+    src="/headshot.jpg"
+    alt="headshot"
+    className={className}
+    layout="fill"
+  />
 );
 
 export default styled(Headshot)`
