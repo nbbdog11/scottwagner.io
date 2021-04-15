@@ -6,24 +6,24 @@ import { ContentBoxItemProps, ItemType } from "./types";
 type StyledContentBoxItemProps = Pick<ContentBoxItemProps, "type">;
 const StyledContentBoxItem = styled.a<StyledContentBoxItemProps>`
   display: block;
-  background: ${props => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.primary};
   color: white;
   text-decoration: none;
   &:visited {
     color: white;
   }
-  ${props => {
+  ${(props) => {
     if (props.type === ItemType.ACTIVE) {
       return {
         background: darken(0.1, props.theme.colors.primary),
         boxShadow: `2px 6px 25px ${darken(0.1, props.theme.colors.primary)}`,
-        transform: "scale(1.01)"
+        transform: "scale(1.01)",
       };
     }
     if (props.type === ItemType.INACTIVE) {
       return {
         background: lighten(0.2, props.theme.colors.primary),
-        transform: "scale(0.99)"
+        transform: "scale(0.99)",
       };
     }
     return {};
@@ -46,7 +46,7 @@ const ContentBoxItem: React.FC<ContentBoxItemProps> = ({
   onBlur,
   children,
   link,
-  type
+  type,
 }) => {
   return (
     <StyledContentBoxItem

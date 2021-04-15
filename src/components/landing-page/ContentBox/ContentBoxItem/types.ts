@@ -1,7 +1,7 @@
 export enum ItemType {
   ACTIVE = "ACTIVE",
   DEFAULT = "DEFAULT",
-  INACTIVE = "INACTIVE"
+  INACTIVE = "INACTIVE",
 }
 
 export type ContentBoxItemProps = {

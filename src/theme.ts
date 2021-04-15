@@ -16,8 +16,8 @@ const theme = {
   colors: {
     primary: "#444444",
     secondary: "#7081b3",
-    tertiary: "#f7f7f7"
-  }
+    tertiary: "#f7f7f7",
+  },
 };
 
 export default theme;

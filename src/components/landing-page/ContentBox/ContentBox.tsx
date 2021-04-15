@@ -7,14 +7,14 @@ export const StyledContentBox = styled.section`
   min-height: 300px;
   width: 90%;
   margin: 1em 0;
-  border: 5px solid ${props => props.theme.colors.secondary};
+  border: 5px solid ${(props) => props.theme.colors.secondary};
   border-radius: 2px;
-  box-shadow: 2px 6px 25px ${props => props.theme.colors.secondary};
+  box-shadow: 2px 6px 25px ${(props) => props.theme.colors.secondary};
   box-sizing: border-box;
 `;
 
 const ContentBoxHeader = styled.h2`
-  background: ${props => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.secondary};
   color: white;
   margin: 0;
   padding: 1em 0;
