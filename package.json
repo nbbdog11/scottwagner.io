@@ -28,10 +28,10 @@
     "polished": "^3.4.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.2.3"
   },
   "devDependencies": {
-    "@types/styled-components": "^4.4.3",
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
     "babel-eslint": "^10.0.3",
