@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SocialLinkIcon from "./SocialLinksIcon";
+import SocialLinkIcon from "components/SocialLinks/SocialLinksIcon";
 
 const socialSites = [
   {

@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
-import LandingPage from "components/landing-page/LandingPage";
-import theme, { GlobalStyling } from "../theme";
+import LandingPage from "components/LandingPage";
+import theme, { GlobalStyling } from "theme";
 
 const Index = () => (
   <ThemeProvider theme={theme}>

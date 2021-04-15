@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import RelativeImage from "../RelativeImage";
+import RelativeImage from "components/RelativeImage";
 
 type HeadshotProps = {
   className?: string;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { ItemType } from "./ContentBoxItem/types";
-import ContentBoxItem from "./ContentBoxItem";
+import { ItemType } from "components/ContentBox/ContentBoxItem/types";
+import ContentBoxItem from "components/ContentBox/ContentBoxItem";
 
 export const StyledContentBox = styled.section`
   min-height: 300px;

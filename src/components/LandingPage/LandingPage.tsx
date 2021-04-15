@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import RelativeImage from "../RelativeImage";
-import Headshot from "../Headshot";
-import SocialLinks from "../SocialLinks";
-import ContentBox, { StyledContentBox } from "../ContentBox";
+import RelativeImage from "components/RelativeImage";
+import Headshot from "components/Headshot";
+import SocialLinks from "components/SocialLinks";
+import ContentBox, { StyledContentBox } from "components/ContentBox";
 
 const Header = styled.header`
   display: flex;
