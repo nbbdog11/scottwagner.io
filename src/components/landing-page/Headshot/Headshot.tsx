@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import styled from "styled-components";
 import RelativeImage from "../RelativeImage";
 
@@ -6,7 +6,7 @@ type HeadshotProps = {
   className?: string;
 };
 
-const Headshot: React.FC<HeadshotProps> = ({ className }) => (
+const Headshot: FC<HeadshotProps> = ({ className }) => (
   <RelativeImage
     src="/headshot.jpg"
     alt="headshot"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled, { css } from "styled-components";
 import RelativeImage from "../RelativeImage";
 import Headshot from "../Headshot";

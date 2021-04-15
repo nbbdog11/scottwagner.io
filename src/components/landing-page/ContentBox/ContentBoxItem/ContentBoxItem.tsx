@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import { darken, lighten } from "polished";
 import { ContentBoxItemProps, ItemType } from "./types";
+import { FC } from "react";
 
 type StyledContentBoxItemProps = Pick<ContentBoxItemProps, "type">;
 const StyledContentBoxItem = styled.a<StyledContentBoxItemProps>`
@@ -39,7 +39,7 @@ const ContentContainer = styled.div`
   text-align: center;
 `;
 
-const ContentBoxItem: React.FC<ContentBoxItemProps> = ({
+const ContentBoxItem: FC<ContentBoxItemProps> = ({
   onMouseOver,
   onMouseOut,
   onFocus,
