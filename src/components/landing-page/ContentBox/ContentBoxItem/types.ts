@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export enum ItemType {
   ACTIVE = "ACTIVE",
   DEFAULT = "DEFAULT",
@@ -9,6 +11,7 @@ export type ContentBoxItemProps = {
   onMouseOut: () => void;
   onFocus: () => void;
   onBlur: () => void;
+  children: ReactNode;
   link: string;
   type: ItemType;
 };

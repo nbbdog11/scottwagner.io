@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { ItemType } from "./ContentBoxItem/types";
 import ContentBoxItem from "./ContentBoxItem";
@@ -37,7 +37,7 @@ type ContentBoxProps = {
   }[];
 };
 
-const ContentBox: FC<ContentBoxProps> = ({ header, items }) => {
+const ContentBox = ({ header, items }: ContentBoxProps) => {
   const [activeItem, setActiveItem] = useState("");
   const clearActiveItem = () => setActiveItem("");
   const getItemType = (name: string) => {

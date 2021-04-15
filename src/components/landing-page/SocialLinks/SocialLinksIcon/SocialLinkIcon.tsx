@@ -1,4 +1,3 @@
-import { FC } from "react";
 import styled from "styled-components";
 
 type StyledSocialLinkIconProps = {
@@ -24,7 +23,7 @@ type SocialLinkIconProps = {
   };
 };
 
-const SocialLinkIcon: FC<SocialLinkIconProps> = ({ site }) => (
+const SocialLinkIcon = ({ site }: SocialLinkIconProps) => (
   <StyledSocialLinkIcon
     activeColor={site.activeColor}
     href={site.link}

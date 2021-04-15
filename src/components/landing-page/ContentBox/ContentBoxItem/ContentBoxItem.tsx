@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { darken, lighten } from "polished";
 import { ContentBoxItemProps, ItemType } from "./types";
-import { FC } from "react";
 
 type StyledContentBoxItemProps = Pick<ContentBoxItemProps, "type">;
 const StyledContentBoxItem = styled.a<StyledContentBoxItemProps>`
@@ -39,7 +38,7 @@ const ContentContainer = styled.div`
   text-align: center;
 `;
 
-const ContentBoxItem: FC<ContentBoxItemProps> = ({
+const ContentBoxItem = ({
   onMouseOver,
   onMouseOut,
   onFocus,
@@ -47,7 +46,7 @@ const ContentBoxItem: FC<ContentBoxItemProps> = ({
   children,
   link,
   type,
-}) => {
+}: ContentBoxItemProps) => {
   return (
     <StyledContentBoxItem
       onMouseOver={onMouseOver}
