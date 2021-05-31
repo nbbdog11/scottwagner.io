@@ -78,8 +78,18 @@ const StyledBox = styled.div`
   background-color: white;
   padding: 1rem;
   font-weight: 300;
+  overflow: hidden;
   h4 {
     color: hsl(206, 100%, 25%);
+  }
+  ::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: hsl(206, 100%, 60%);
   }
 `;
 
