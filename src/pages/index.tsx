@@ -91,12 +91,12 @@ type BoxProps = {
 
 const Box = ({ title, link, description }: BoxProps) => {
   return (
-    <StyledBox>
-      <a href={link}>
+    <a href={link}>
+      <StyledBox>
         <h4>{title}</h4>
-      </a>
-      <p>{description}</p>
-    </StyledBox>
+        <p>{description}</p>
+      </StyledBox>
+    </a>
   );
 };
 

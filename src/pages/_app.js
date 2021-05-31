@@ -16,12 +16,20 @@ const GlobalStyling = createGlobalStyle`
     line-height: 1.6;
     margin: 0;
     background-color: white;
+    color: black;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', serif;
     margin: 0;
     font-weight: 600;
+  }
+
+  a {
+    text-decoration: none;
+    :visited {
+      color: unset;
+    }
   }
 
   * {
